@@ -7,7 +7,6 @@
 #include "MCTree.h"
 #include "Point.h"
 
-
 using namespace std;
 
 /*
@@ -55,13 +54,13 @@ extern "C" Point *getPoint(const int M, const int N, const int *top,
     */
 
     // a naive example
-    for (int i = N - 1; i >= 0; i--) {
-        if (top[i] > 0) {
-            x = top[i] - 1;
-            y = i;
-            break;
-        }
-    }
+    // for (int i = N - 1; i >= 0; i--) {
+    //     if (top[i] > 0) {
+    //         x = top[i] - 1;
+    //         y = i;
+    //         break;
+    //     }
+    // }
 
     clearArray(M, N, board);
     return new Point(x, y);
