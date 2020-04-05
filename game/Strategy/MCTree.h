@@ -15,10 +15,10 @@ class MCTree {
         short player;
         int parent;
         int child[MAX_N];
-        void backProp(int value);
-
-       private:
+        void backUp(int value);
+        void expand();
         bool isLeaf();
+        int bestChild();
     };
     class NodePool {};
 };
