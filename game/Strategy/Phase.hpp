@@ -73,25 +73,21 @@ class Phase {
     }
 
     bool isWinningMove(int col, int player) const {
-        unsigned int pos[MAX_N];
+        unsigned int pos[MAX_N] = {0};
         if (player == 1)
             memmove(pos, user, sizeof(user));
-        else if (player == 2)
-            memmove(pos, machine, sizeof(machine));
-        else {
-            cout << "Invalid Player!" << endl;
-            exit(1);
-        }
+        else memmove(pos, machine, sizeof(machine));
+        pos[col] |= (1 << (M - top[col]));
         return alignment(pos);
     }
 
     bool isLosingMove(int col, int player) const {
-        Phase phase(*this);
-        phase.play(col, player);
-        for (int i = 0; i < N; ++i) {
-            if (phase.isWinningMove(i, 3 - player)) return true;
-        }
-        return false;
+        unsigned int pos[MAX_N] = {0};
+        if (player == 1)
+            memmove(pos, user, sizeof(user));
+        else memmove(pos, machine, sizeof(machine));
+        pos[col] |= (1 << (M - top[col]));
+        return alignment(pos);
     }
 
     void printBoard() const {
@@ -129,7 +125,7 @@ class Phase {
    private:
     bool alignment(const unsigned int* pos) const {
         // Horizontal
-        unsigned int m[MAX_N];
+        unsigned int m[MAX_N] = {0};
         for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & pos[i + 1];
         for (int i = 0; i < N - 3; ++i)
             if (m[i] & m[i + 2]) return true;

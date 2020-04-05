@@ -56,7 +56,7 @@ extern "C" Point *getPoint(const int M, const int N, const int *top,
     Phase::set(M, N, noX, noY);
     Phase phase(board, top);
     mcTree.setPhase(phase);
-    int move = mcTree.search(2800000);
+    int move = mcTree.search(2900000);
     cout << "My move: " << move << endl;
     clearArray(M, N, board);
     return new Point(top[move] - 1, move);

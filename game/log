@@ -1,283 +1,144 @@
-Round 0 seed: 1586105677 :
-M = 11, N = 12
+Round 0 seed: 1586112906 :
+M = 9, N = 12
 A first:
-Opponent's move: 8
-Move: 0 Score: 0.190178 Cnt: 2936 Value: 558.364
-Move: 1 Score: 0.234679 Cnt: 3932 Value: 922.758
-Move: 2 Score: 0.241333 Cnt: 4125 Value: 995.5
-Move: 3 Score: 0.366902 Cnt: 13895 Value: 5098.11
-Move: 4 Score: 0.27357 Cnt: 5288 Value: 1446.64
-Move: 5 Score: 0.380262 Cnt: 16718 Value: 6357.21
-Move: 6 Score: 0.448924 Cnt: 67261 Value: 30195.1
-Move: 7 Score: 0.70275 Cnt: 470191 Value: 330427
-Move: 8 Score: 0.244157 Cnt: 4206 Value: 1026.92
-Move: 9 Score: 0.338949 Cnt: 9869 Value: 3345.09
-Move: 10 Score: 0.23987 Cnt: 4081 Value: 978.909
-Move: 11 Score: 0.196289 Cnt: 3050 Value: 598.682
-My move: 7
-Opponent's move: 8
-Move: 0 Score: 0.231454 Cnt: 1712 Value: 396.25
-Move: 1 Score: 0.246926 Cnt: 1853 Value: 457.553
-Move: 2 Score: 0.227689 Cnt: 1676 Value: 381.606
-Move: 3 Score: 0.291503 Cnt: 2383 Value: 694.652
-Move: 4 Score: 0.300109 Cnt: 2518 Value: 755.674
-Move: 5 Score: 0.316006 Cnt: 2782 Value: 879.129
-Move: 6 Score: 0.264543 Cnt: 2043 Value: 540.462
-Move: 7 Score: 0.2911 Cnt: 2378 Value: 692.235
-Move: 8 Score: 0.884387 Cnt: 752074 Value: 665124
-Move: 9 Score: 0.265826 Cnt: 2056 Value: 546.538
-Move: 10 Score: 0.292004 Cnt: 2393 Value: 698.765
-Move: 11 Score: 0.262527 Cnt: 2018 Value: 529.78
-My move: 8
-Opponent's move: 5
-Move: 0 Score: 0.192244 Cnt: 3211 Value: 617.295
-Move: 1 Score: 0.209924 Cnt: 3617 Value: 759.295
-Move: 2 Score: 0.257302 Cnt: 5152 Value: 1325.62
-Move: 3 Score: 0.688812 Cnt: 556401 Value: 383256
-Move: 4 Score: 0.348285 Cnt: 13107 Value: 4564.97
-Move: 5 Score: 0.285572 Cnt: 6592 Value: 1882.49
-Move: 6 Score: 0.20443 Cnt: 3482 Value: 711.826
-Move: 7 Score: 0.275866 Cnt: 6036 Value: 1665.13
-Move: 8 Score: 0.236497 Cnt: 4375 Value: 1034.67
-Move: 9 Score: 0.191341 Cnt: 3198 Value: 611.909
-Move: 10 Score: 0.222377 Cnt: 3943 Value: 876.833
-Move: 11 Score: 0.222617 Cnt: 3949 Value: 879.114
+Opponent's move: 3
+Move: 0 Score: -0.0443158 Cnt: 80484 Value: -3566.71
+Move: 1 Score: -0.471467 Cnt: 1337 Value: -630.352
+Move: 2 Score: -0.509235 Cnt: 1153 Value: -587.148
+Move: 3 Score: -0.0260113 Cnt: 159495 Value: -4148.68
+Move: 4 Score: -0.497277 Cnt: 1207 Value: -600.213
+Move: 5 Score: -0.493479 Cnt: 1224 Value: -604.019
+Move: 6 Score: -0.495207 Cnt: 1217 Value: -602.667
+Move: 7 Score: -0.460331 Cnt: 1400 Value: -644.463
+Move: 8 Score: -0.481049 Cnt: 1285 Value: -618.148
+Move: 9 Score: -0.435948 Cnt: 1553 Value: -677.028
+Move: 10 Score: -0.0480239 Cnt: 71814 Value: -3448.79
+Move: 11 Score: -0.0573695 Cnt: 55275 Value: -3171.1
 My move: 3
 Opponent's move: 7
-Move: 0 Score: 0.156842 Cnt: 1981 Value: 310.705
-Move: 1 Score: 0.201127 Cnt: 2566 Value: 516.091
-Move: 2 Score: 0.202854 Cnt: 2593 Value: 526
-Move: 3 Score: 0.206514 Cnt: 2652 Value: 547.674
-Move: 4 Score: 0.155627 Cnt: 1964 Value: 305.652
-Move: 5 Score: 0.864242 Cnt: 673613 Value: 582165
-Move: 6 Score: 0.163769 Cnt: 2055 Value: 336.545
-Move: 7 Score: 0.192328 Cnt: 2427 Value: 466.78
-Move: 8 Score: 0.198539 Cnt: 2520 Value: 500.318
-Move: 9 Score: 0.206439 Cnt: 2653 Value: 547.682
-Move: 10 Score: 0.178755 Cnt: 2238 Value: 400.053
-Move: 11 Score: 0.187314 Cnt: 2353 Value: 440.75
-My move: 5
-Opponent's move: 10
-Move: 0 Score: 0.194053 Cnt: 1917 Value: 372
-Move: 1 Score: 0.22131 Cnt: 2235 Value: 494.629
-Move: 2 Score: 0.210374 Cnt: 2098 Value: 441.364
-Move: 3 Score: 0.207881 Cnt: 2069 Value: 430.106
-Move: 4 Score: 0.115484 Cnt: 1308 Value: 151.053
-Move: 5 Score: 0.172168 Cnt: 1709 Value: 294.235
-Move: 6 Score: 0.142085 Cnt: 1475 Value: 209.576
-Move: 7 Score: 0.214354 Cnt: 2151 Value: 461.076
-Move: 8 Score: 0.199524 Cnt: 1975 Value: 394.061
-Move: 9 Score: 0.83815 Cnt: 611128 Value: 512217
-Move: 10 Score: 0.271145 Cnt: 3059 Value: 829.432
-Move: 11 Score: 0.362466 Cnt: 6464 Value: 2342.98
-My move: 9
-Opponent's move: 8
-Move: 0 Score: 0.181198 Cnt: 1381 Value: 250.235
-Move: 1 Score: 0.24367 Cnt: 1885 Value: 459.318
-Move: 2 Score: 0.234168 Cnt: 1792 Value: 419.629
-Move: 3 Score: 0.204786 Cnt: 1544 Value: 316.189
-Move: 4 Score: 0.136817 Cnt: 1137 Value: 155.561
-Move: 5 Score: 0.188813 Cnt: 1434 Value: 270.758
-Move: 6 Score: 0.180675 Cnt: 1378 Value: 248.97
-Move: 7 Score: 0.281146 Cnt: 2338 Value: 657.318
-Move: 8 Score: 0.225369 Cnt: 1715 Value: 386.508
-Move: 9 Score: 0.834544 Cnt: 837337 Value: 698794
-Move: 10 Score: 0.397923 Cnt: 5522 Value: 2197.33
-Move: 11 Score: 0.203852 Cnt: 1540 Value: 313.932
-My move: 9
-Opponent's move: 9
-Move: 0 Score: 0.181698 Cnt: 1510 Value: 274.364
-Move: 1 Score: 0.265581 Cnt: 2362 Value: 627.303
-Move: 2 Score: 0.236509 Cnt: 1998 Value: 472.545
-Move: 3 Score: 0.235578 Cnt: 1984 Value: 467.386
-Move: 4 Score: 0.139811 Cnt: 1246 Value: 174.205
-Move: 5 Score: 0.216207 Cnt: 1791 Value: 387.227
-Move: 6 Score: 0.166979 Cnt: 1409 Value: 235.273
-Move: 7 Score: 0.330033 Cnt: 3620 Value: 1194.72
-Move: 8 Score: 0.250778 Cnt: 2162 Value: 542.182
-Move: 9 Score: 0.243846 Cnt: 2083 Value: 507.932
-Move: 10 Score: 0.805423 Cnt: 806856 Value: 649860
-Move: 11 Score: 0.338444 Cnt: 3851 Value: 1303.35
+Move: 0 Score: -0.42451 Cnt: 1641 Value: -696.62
+Move: 1 Score: -0.479333 Cnt: 1297 Value: -621.694
+Move: 2 Score: -0.531192 Cnt: 1063 Value: -564.657
+Move: 3 Score: -0.0121444 Cnt: 232451 Value: -2822.97
+Move: 4 Score: -0.510582 Cnt: 1148 Value: -586.148
+Move: 5 Score: -0.507116 Cnt: 1162 Value: -589.269
+Move: 6 Score: -0.51468 Cnt: 1129 Value: -581.074
+Move: 7 Score: -0.497687 Cnt: 1205 Value: -599.713
+Move: 8 Score: -0.540725 Cnt: 1027 Value: -555.324
+Move: 9 Score: -0.514618 Cnt: 1130 Value: -581.519
+Move: 10 Score: -0.482038 Cnt: 1282 Value: -617.972
+Move: 11 Score: -0.0511323 Cnt: 95517 Value: -4884
+My move: 3
+Opponent's move: 6
+Move: 0 Score: -0.157649 Cnt: 32405 Value: -5108.61
+Move: 1 Score: -0.522512 Cnt: 1514 Value: -791.083
+Move: 2 Score: -0.515777 Cnt: 1557 Value: -803.065
+Move: 3 Score: -0.584654 Cnt: 1178 Value: -688.722
+Move: 4 Score: -0.609654 Cnt: 1074 Value: -654.769
+Move: 5 Score: -0.635346 Cnt: 980 Value: -622.639
+Move: 6 Score: -0.148196 Cnt: 39482 Value: -5851.06
+Move: 7 Score: -0.149121 Cnt: 38699 Value: -5770.81
+Move: 8 Score: -0.637368 Cnt: 974 Value: -620.796
+Move: 9 Score: -0.635098 Cnt: 982 Value: -623.667
+Move: 10 Score: -0.0810864 Cnt: 205258 Value: -16643.6
+Move: 11 Score: -0.10014 Cnt: 177004 Value: -17725.2
 My move: 10
-Opponent's move: 7
-Move: 0 Score: 0.256466 Cnt: 1830 Value: 469.333
-Move: 1 Score: 0.309312 Cnt: 2470 Value: 764
-Move: 2 Score: 0.288327 Cnt: 2180 Value: 628.553
-Move: 3 Score: 0.293301 Cnt: 2241 Value: 657.288
-Move: 4 Score: 0.24596 Cnt: 1731 Value: 425.758
-Move: 5 Score: 0.261602 Cnt: 1878 Value: 491.288
-Move: 6 Score: 0.3102 Cnt: 2483 Value: 770.227
-Move: 7 Score: 0.800339 Cnt: 835286 Value: 668512
-Move: 8 Score: 0.29904 Cnt: 2318 Value: 693.174
-Move: 9 Score: 0.317905 Cnt: 2604 Value: 827.826
-Move: 10 Score: 0.248625 Cnt: 1757 Value: 436.833
-Move: 11 Score: 0.218458 Cnt: 1510 Value: 329.871
-My move: 7
-Opponent's move: 8
-Move: 0 Score: 0.232549 Cnt: 2003 Value: 465.795
-Move: 1 Score: 0.286716 Cnt: 2769 Value: 793.917
-Move: 2 Score: 0.274909 Cnt: 2569 Value: 706.242
-Move: 3 Score: 0.282597 Cnt: 2698 Value: 762.447
-Move: 4 Score: 0.235629 Cnt: 2037 Value: 479.977
-Move: 5 Score: 0.244819 Cnt: 2145 Value: 525.136
-Move: 6 Score: 0.27346 Cnt: 2544 Value: 695.682
-Move: 7 Score: 0.265505 Cnt: 2423 Value: 643.318
-Move: 8 Score: 0.787716 Cnt: 836490 Value: 658917
-Move: 9 Score: 0.293862 Cnt: 2902 Value: 852.788
-Move: 10 Score: 0.281331 Cnt: 2675 Value: 752.561
-Move: 11 Score: 0.243059 Cnt: 2123 Value: 516.015
-My move: 8
-Opponent's move: 1
-Move: 0 Score: 0.163974 Cnt: 2453 Value: 402.227
-Move: 1 Score: 0.257951 Cnt: 4749 Value: 1225.01
-Move: 2 Score: 0.182362 Cnt: 2743 Value: 500.22
-Move: 3 Score: 0.268769 Cnt: 5211 Value: 1400.55
-Move: 4 Score: 0.190434 Cnt: 2891 Value: 550.545
-Move: 5 Score: 0.223582 Cnt: 3631 Value: 811.826
-Move: 6 Score: 0.767497 Cnt: 787765 Value: 604607
-Move: 7 Score: 0.2196 Cnt: 3529 Value: 774.97
-Move: 8 Score: 0.220543 Cnt: 3557 Value: 784.47
-Move: 9 Score: 0.304643 Cnt: 7332 Value: 2233.64
-Move: 10 Score: 0.270926 Cnt: 5315 Value: 1439.97
-Move: 11 Score: 0.210926 Cnt: 3320 Value: 700.273
-My move: 6
+Opponent's move: 5
+Move: 0 Score: -0.452045 Cnt: 25887 Value: -11702.1
+Move: 1 Score: -0.745516 Cnt: 1813 Value: -1351.62
+Move: 2 Score: -0.743741 Cnt: 1830 Value: -1361.05
+Move: 3 Score: -0.176142 Cnt: 463926 Value: -81717
+Move: 4 Score: -0.750796 Cnt: 1767 Value: -1326.66
+Move: 5 Score: -0.74366 Cnt: 1830 Value: -1360.9
+Move: 6 Score: -0.743701 Cnt: 1830 Value: -1360.97
+Move: 7 Score: -0.74273 Cnt: 1839 Value: -1365.88
+Move: 8 Score: -0.750796 Cnt: 1767 Value: -1326.66
+Move: 9 Score: -0.744747 Cnt: 1821 Value: -1356.19
+Move: 10 Score: -0.416878 Cnt: 59638 Value: -24861.7
+Move: 11 Score: -0.74523 Cnt: 1817 Value: -1354.08
+My move: 3
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
-. . . . . . . . B . . . 
-. . . . . . . . A . . . 
-. . . . . . . B A . . . 
-. . . . . . . A B A . . 
-. . X . . B A A A B B . 
-. A . B . A B B A B A . 
+. . . B . . . . . . . . 
+. . . B . . . . . . . X 
+. . . B . . . . . . . . 
+. . . A . A A A A . B . 
 A - won
 B first:
 Opponent's move: -1
-Move: 0 Score: -0.0520822 Cnt: 3260 Value: -169.788
-Move: 1 Score: 0.0262872 Cnt: 5733 Value: 150.705
-Move: 2 Score: 0.0451933 Cnt: 6757 Value: 305.371
-Move: 3 Score: 0.21511 Cnt: 125077 Value: 26905.3
-Move: 4 Score: 0.194809 Cnt: 64175 Value: 12501.9
-Move: 5 Score: 0.203026 Cnt: 82013 Value: 16650.8
-Move: 6 Score: 0.200935 Cnt: 76859 Value: 15443.7
-Move: 7 Score: 0.199918 Cnt: 74527 Value: 14899.3
-Move: 8 Score: 0.211153 Cnt: 107818 Value: 22766.1
-Move: 9 Score: 0.0469218 Cnt: 6867 Value: 322.212
-Move: 10 Score: -0.00202757 Cnt: 4592 Value: -9.31061
-Move: 11 Score: -0.0604054 Cnt: 3096 Value: -187.015
-My move: 3
-Opponent's move: 8
-Move: 0 Score: -0.0376668 Cnt: 1715 Value: -64.5985
-Move: 1 Score: 0.0300034 Cnt: 2503 Value: 75.0985
-Move: 2 Score: 0.0441318 Cnt: 2732 Value: 120.568
-Move: 3 Score: 0.0062278 Cnt: 2175 Value: 13.5455
-Move: 4 Score: 0.0661753 Cnt: 3164 Value: 209.379
-Move: 5 Score: 0.0708717 Cnt: 3267 Value: 231.538
-Move: 6 Score: 0.101679 Cnt: 4108 Value: 417.697
-Move: 7 Score: 0.798717 Cnt: 644308 Value: 514620
-Move: 8 Score: 0.0356496 Cnt: 2593 Value: 92.4394
-Move: 9 Score: 0.0953147 Cnt: 3912 Value: 372.871
-Move: 10 Score: 0.0529858 Cnt: 2893 Value: 153.288
-Move: 11 Score: 0.0222671 Cnt: 2387 Value: 53.1515
-My move: 7
-Opponent's move: 4
-Move: 0 Score: -0.00420006 Cnt: 4935 Value: -20.7273
-Move: 1 Score: 0.0484943 Cnt: 7888 Value: 382.523
-Move: 2 Score: -0.0285101 Cnt: 4107 Value: -117.091
-Move: 3 Score: 0.076451 Cnt: 10663 Value: 815.197
-Move: 4 Score: 0.191256 Cnt: 97677 Value: 18681.3
-Move: 5 Score: -0.077704 Cnt: 2958 Value: -229.848
-Move: 6 Score: -0.0720365 Cnt: 3062 Value: -220.576
-Move: 7 Score: 0.0793749 Cnt: 11037 Value: 876.061
-Move: 8 Score: 0.692922 Cnt: 489288 Value: 339038
-Move: 9 Score: 0.0297451 Cnt: 6585 Value: 195.871
-Move: 10 Score: 0.0552331 Cnt: 8450 Value: 466.72
-Move: 11 Score: 0.093209 Cnt: 13100 Value: 1221.04
+Move: 0 Score: -0.0531146 Cnt: 15181 Value: -806.333
+Move: 1 Score: -0.034277 Cnt: 20075 Value: -688.111
+Move: 2 Score: -0.022664 Cnt: 24384 Value: -552.639
+Move: 3 Score: -0.0124323 Cnt: 29458 Value: -366.231
+Move: 4 Score: -0.0107097 Cnt: 30457 Value: -326.185
+Move: 5 Score: -0.0113451 Cnt: 30088 Value: -341.352
+Move: 6 Score: -0.0101291 Cnt: 30817 Value: -312.148
+Move: 7 Score: -0.00897706 Cnt: 31531 Value: -283.056
+Move: 8 Score: -0.00800703 Cnt: 32150 Value: -257.426
+Move: 9 Score: -0.0104544 Cnt: 30455 Value: -318.389
+Move: 10 Score: -0.035459 Cnt: 19703 Value: -698.648
+Move: 11 Score: -0.128999 Cnt: 6516 Value: -840.556
 My move: 8
-Opponent's move: 7
-Move: 0 Score: -0.000967151 Cnt: 4880 Value: -4.7197
-Move: 1 Score: 0.0355698 Cnt: 6680 Value: 237.606
-Move: 2 Score: -0.0329648 Cnt: 3848 Value: -126.848
-Move: 3 Score: 0.0664913 Cnt: 9097 Value: 604.871
-Move: 4 Score: 0.69868 Cnt: 544006 Value: 380086
-Move: 5 Score: -0.0111136 Cnt: 4514 Value: -50.1667
-Move: 6 Score: -0.0817787 Cnt: 2802 Value: -229.144
-Move: 7 Score: 0.184705 Cnt: 70219 Value: 12969.8
-Move: 8 Score: 0.0155852 Cnt: 5590 Value: 87.1212
-Move: 9 Score: 0.0130572 Cnt: 5473 Value: 71.4621
-Move: 10 Score: 0.0571049 Cnt: 8244 Value: 470.773
-Move: 11 Score: 0.0511386 Cnt: 7753 Value: 396.477
-My move: 4
-Opponent's move: 8
-Move: 0 Score: -0.0356553 Cnt: 4460 Value: -159.023
-Move: 1 Score: -0.0296096 Cnt: 4676 Value: -138.455
-Move: 2 Score: -0.099555 Cnt: 2867 Value: -285.424
-Move: 3 Score: 0.00917071 Cnt: 6531 Value: 59.8939
-Move: 4 Score: -0.0584263 Cnt: 3764 Value: -219.917
-Move: 5 Score: -0.0847403 Cnt: 3150 Value: -266.932
-Move: 6 Score: -0.0852037 Cnt: 3139 Value: -267.455
-Move: 7 Score: 0.729725 Cnt: 640450 Value: 467353
-Move: 8 Score: 0.025898 Cnt: 7691 Value: 199.182
-Move: 9 Score: 0.0110496 Cnt: 6647 Value: 73.447
-Move: 10 Score: 0.0261343 Cnt: 7707 Value: 201.417
-Move: 11 Score: 0.000284547 Cnt: 6017 Value: 1.71212
-My move: 7
-Opponent's move: 8
-Move: 0 Score: 0.063712 Cnt: 1483 Value: 94.4848
-Move: 1 Score: 0.0512608 Cnt: 1400 Value: 71.7652
-Move: 2 Score: 0.0256724 Cnt: 1245 Value: 31.9621
-Move: 3 Score: 0.0817883 Cnt: 1623 Value: 132.742
-Move: 4 Score: 0.0376828 Cnt: 1314 Value: 49.5152
-Move: 5 Score: 0.0109716 Cnt: 1169 Value: 12.8258
-Move: 6 Score: -0.0439685 Cnt: 938 Value: -41.2424
-Move: 7 Score: 0.102497 Cnt: 1805 Value: 185.008
-Move: 8 Score: 0.841768 Cnt: 826045 Value: 695338
-Move: 9 Score: 0.131548 Cnt: 2119 Value: 278.75
-Move: 10 Score: 0.120562 Cnt: 1994 Value: 240.402
-Move: 11 Score: 0.0704881 Cnt: 1534 Value: 108.129
-My move: 8
-Opponent's move: 9
-Move: 0 Score: 0.100292 Cnt: 1622 Value: 162.674
-Move: 1 Score: 0.100276 Cnt: 1620 Value: 162.447
-Move: 2 Score: 0.052802 Cnt: 1294 Value: 68.3258
-Move: 3 Score: 0.117191 Cnt: 1767 Value: 207.076
-Move: 4 Score: 0.0855488 Cnt: 1508 Value: 129.008
-Move: 5 Score: 0.0102859 Cnt: 1079 Value: 11.0985
-Move: 6 Score: 0.0868441 Cnt: 1517 Value: 131.742
-Move: 7 Score: 0.124097 Cnt: 1833 Value: 227.47
-Move: 8 Score: 0.0448783 Cnt: 1249 Value: 56.053
-Move: 9 Score: 0.152636 Cnt: 2149 Value: 328.015
-Move: 10 Score: 0.823818 Cnt: 821722 Value: 676950
-Move: 11 Score: 0.281337 Cnt: 5413 Value: 1522.88
-My move: 10
-Opponent's move: 9
-Move: 0 Score: -0.00946776 Cnt: 977 Value: -9.25
-Move: 1 Score: 0.0267029 Cnt: 1130 Value: 30.1742
-Move: 2 Score: -0.0111137 Cnt: 970 Value: -10.7803
-Move: 3 Score: 0.0887345 Cnt: 1498 Value: 132.924
-Move: 4 Score: 0.00711045 Cnt: 1042 Value: 7.40909
-Move: 5 Score: -0.0750752 Cnt: 766 Value: -57.5076
-Move: 6 Score: 0.0110284 Cnt: 1062 Value: 11.7121
-Move: 7 Score: 0.0467315 Cnt: 1234 Value: 57.6667
-Move: 8 Score: 0.0136024 Cnt: 1071 Value: 14.5682
-Move: 9 Score: 0.805206 Cnt: 774757 Value: 623839
-Move: 10 Score: 0.0487682 Cnt: 1246 Value: 60.7652
-Move: 11 Score: 0.0378087 Cnt: 1189 Value: 44.9545
+Opponent's move: 6
+Move: 0 Score: -0.0996763 Cnt: 14832 Value: -1478.4
+Move: 1 Score: -0.0747887 Cnt: 21521 Value: -1609.53
+Move: 2 Score: -0.0571285 Cnt: 29457 Value: -1682.83
+Move: 3 Score: -0.0435526 Cnt: 38965 Value: -1697.03
+Move: 4 Score: -0.0681651 Cnt: 24064 Value: -1640.32
+Move: 5 Score: -0.0689193 Cnt: 23761 Value: -1637.59
+Move: 6 Score: -0.0503364 Cnt: 33704 Value: -1696.54
+Move: 7 Score: -0.0588377 Cnt: 28513 Value: -1677.64
+Move: 8 Score: -0.0863671 Cnt: 17943 Value: -1549.69
+Move: 9 Score: -0.0328626 Cnt: 50100 Value: -1646.42
+Move: 10 Score: -0.0392961 Cnt: 42672 Value: -1676.84
+Move: 11 Score: -0.100434 Cnt: 14677 Value: -1474.07
 My move: 9
-Opponent's move: 9
-Move: 0 Score: 0.255778 Cnt: 986 Value: 252.197
-Move: 1 Score: 0.263004 Cnt: 1009 Value: 265.371
-Move: 2 Score: 0.213313 Cnt: 858 Value: 183.023
-Move: 3 Score: 0.240733 Cnt: 936 Value: 225.326
-Move: 4 Score: 0.221262 Cnt: 881 Value: 194.932
-Move: 5 Score: 0.213154 Cnt: 858 Value: 182.886
-Move: 6 Score: 0.830039 Cnt: 1004387 Value: 833680
-Move: 7 Score: 0.286578 Cnt: 1095 Value: 313.803
-Move: 8 Score: 0.248827 Cnt: 962 Value: 239.371
-Move: 9 Score: 0.2734 Cnt: 1048 Value: 286.523
-Move: 10 Score: 0.139032 Cnt: 690 Value: 95.9318
-Move: 11 Score: 0.203225 Cnt: 832 Value: 169.083
-My move: 6
+Opponent's move: 8
+Move: 0 Score: -0.233825 Cnt: 9627 Value: -2251.04
+Move: 1 Score: -0.218347 Cnt: 11517 Value: -2514.7
+Move: 2 Score: -0.227719 Cnt: 10307 Value: -2347.1
+Move: 3 Score: -0.255042 Cnt: 7718 Value: -1968.42
+Move: 4 Score: -0.257991 Cnt: 7503 Value: -1935.7
+Move: 5 Score: -0.274786 Cnt: 6410 Value: -1761.38
+Move: 6 Score: -0.292545 Cnt: 5500 Value: -1609
+Move: 7 Score: -0.276914 Cnt: 6295 Value: -1743.18
+Move: 8 Score: -0.243186 Cnt: 8709 Value: -2117.91
+Move: 9 Score: -0.265502 Cnt: 6984 Value: -1854.27
+Move: 10 Score: -0.0710365 Cnt: 272531 Value: -19359.7
+Move: 11 Score: -0.21529 Cnt: 11955 Value: -2573.79
+My move: 10
 Opponent's move: 7
+Move: 0 Score: -0.321113 Cnt: 5332 Value: -1712.18
+Move: 1 Score: -0.318422 Cnt: 5457 Value: -1737.63
+Move: 2 Score: -0.322677 Cnt: 5268 Value: -1699.86
+Move: 3 Score: -0.318462 Cnt: 5451 Value: -1735.94
+Move: 4 Score: -0.775452 Cnt: 653 Value: -506.37
+Move: 5 Score: -0.771605 Cnt: 660 Value: -509.259
+Move: 6 Score: -0.324619 Cnt: 5184 Value: -1682.82
+Move: 7 Score: -0.31656 Cnt: 5544 Value: -1755.01
+Move: 8 Score: -0.337606 Cnt: 4674 Value: -1577.97
+Move: 9 Score: -0.314807 Cnt: 5627 Value: -1771.42
+Move: 10 Score: -0.322183 Cnt: 5289 Value: -1704.03
+Move: 11 Score: -0.0854656 Cnt: 387510 Value: -33118.8
+My move: 11
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . X 
+. . . . . . . . A . . . 
+. . . . . . A A B B B B 
+B - won
+
+Stat:
+ratio of A wins : 0.5
+ratio of B wins : 0.5
+ratio of Tie : 0
+
+ratio of (A wins + tie) : 0.5
+ratio of (B wins + tie) : 0.5

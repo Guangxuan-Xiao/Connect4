@@ -18,6 +18,7 @@ void MCTree::backUp(int node, double value) {
     while (node != -1) {
         ++nodes[node].cnt;
         nodes[node].value += value;
+        value = -value;
         node = nodes[node].parent;
     }
 }
@@ -53,9 +54,7 @@ void MCTree::setPhase(const Phase& phase) {
     N = phase.N;
     nodes.size = 0;
     root = nodes.newNode(1, -1);
-    for (int i = 0; i < N; ++i)
-        if (initPhase.canPlay(i))
-            nodes[root].child[i] = nodes.newNode(3 - nodes[root].player, root);
+    expand(root);
 }
 
 int MCTree::select() {
@@ -72,9 +71,10 @@ int MCTree::select() {
 }
 
 int MCTree::expand(int node) {
+    int player = nodes[node].player;
     for (int i = 0; i < N; ++i) {
         if (curPhase.canPlay(i)) {
-            nodes[node].child[i] = nodes.newNode(3 - nodes[node].player, node);
+            nodes[node].child[i] = nodes.newNode(3 - player, node);
         }
     }
     for (int i = 0; i < N; ++i)
@@ -95,7 +95,7 @@ int MCTree::smartPolicy(int player) {
     for (int i = 0; i < N; ++i)
         if (curPhase.canPlay(i)) {
             if (curPhase.isWinningMove(i, player)) return i;
-            if (!curPhase.isLosingMove(i, player)) nextMove[moveNum++] = i;
+            nextMove[moveNum++] = i;
         }
     return nextMove[rand() % moveNum];
 }
