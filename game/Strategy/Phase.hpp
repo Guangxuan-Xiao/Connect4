@@ -1,12 +1,13 @@
-#ifndef PHASE_H_
-#define PHASE_H_
+#ifndef PHASE_HPP_
+#define PHASE_HPP_
 #include <assert.h>
 #include <string.h>
 
 #include <iostream>
+
+#include "constant.h"
 using namespace std;
-const int MAX_N = 12;
-const int MAX_M = 12;
+
 class Phase {
    public:
     Phase() : moves(0) {
@@ -19,7 +20,7 @@ class Phase {
         memset(user, 0, sizeof(user));
         memset(machine, 0, sizeof(machine));
         memset(top, 0, sizeof(top));
-        memmove(top, _top, N * sizeof(int));
+        for (int i = 0; i < N; ++i) top[i] = _top[i];
         for (int i = 0; i < M; ++i) {
             for (int j = 0; j < N; ++j) {
                 setPiece(i, j, board[i][j]);
@@ -28,27 +29,37 @@ class Phase {
         }
     }
 
-    bool canPlay(int col) const {
-        assert(col < N && col >= 0);
-        return top[col] < M;
+    Phase(const Phase& phase) : moves(phase.moves) {
+        memmove(user, phase.user, sizeof(user));
+        memmove(machine, phase.machine, sizeof(machine));
+        memmove(top, phase.top, sizeof(top));
     }
 
-    Phase play(int col, int player) const {
-        Phase newPhase;
-        memmove(newPhase.user, user, sizeof(user));
-        memmove(newPhase.machine, machine, sizeof(machine));
-        memmove(newPhase.top, top, sizeof(top));
+    Phase& operator=(const Phase& phase) {
+        moves = phase.moves;
+        memmove(user, phase.user, sizeof(user));
+        memmove(machine, phase.machine, sizeof(machine));
+        memmove(top, phase.top, sizeof(top));
+        return *this;
+    }
+
+    bool canPlay(int col) const {
+        assert(col < N && col >= 0);
+        return top[col] > 0;
+    }
+
+    void play(int col, int player) {
         if (player == 1)
-            newPhase.user[col] |= (1 << newPhase.top[col]);
+            user[col] |= (1 << (M - top[col]));
         else if (player == 2)
-            newPhase.machine[col] |= (1 << newPhase.top[col]);
+            machine[col] |= (1 << (M - top[col]));
         else {
             cout << "Invalid Player!" << endl;
             exit(1);
         }
-        newPhase.top[col] += 1;
-        newPhase.moves = moves + 1;
-        return newPhase;
+        top[col] -= 1;
+        if (noY == col && top[col] == noX) top[col] -= 1;
+        moves = moves + 1;
     }
 
     bool userWin() const { return alignment(user); }
@@ -91,18 +102,20 @@ class Phase {
         }
     }
 
-    static void setBoard(int m, int n) {
+    static void set(int m, int n, int _noX, int _noY) {
         M = m;
         N = n;
+        noX = _noX;
+        noY = _noY;
     }
 
-    int score() const { return (M * N - moves) / 2; }
+    double score() const { return 1 - (double)moves / (M * N); }
 
     unsigned char top[MAX_N];
     unsigned int user[MAX_N], machine[MAX_N];
     int moves;
-    static int M;
-    static int N;
+    static int M, N;
+    static int noX, noY;
 
    private:
     bool alignment(const unsigned int* pos) const {
@@ -140,6 +153,4 @@ class Phase {
             return;
     }
 };
-int Phase::M = 12;
-int Phase::N = 12;
 #endif

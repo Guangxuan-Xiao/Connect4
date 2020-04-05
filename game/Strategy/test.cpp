@@ -3,7 +3,7 @@
 #include "Phase.hpp"
 using namespace std;
 void testPhase() {
-    Phase::setBoard(8, 8);
+    Phase::set(8, 8);
     Phase phase;
     cout << sizeof(phase) << endl;
     phase.printBoard();

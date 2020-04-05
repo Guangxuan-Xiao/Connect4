@@ -5,12 +5,16 @@
 #include <iostream>
 
 #include "MCTree.h"
-#include "Phase.hpp"
 #include "Point.h"
 
 using namespace std;
+int Phase::M = 12;
+int Phase::N = 12;
+int Phase::noX = 12;
+int Phase::noY = 12;
+MCTree mcTree;
 typedef pair<int, int> pii;
-int negamax(const Phase &phase, int alpha, int beta, int player, int &move);
+// int negamax(const Phase &phase, int alpha, int beta, int player, int &move);
 /*
         策略函数接口,该函数被对抗平台调用,每次传入当前状态,要求输出你的落子点,该落子点必须是一个符合游戏规则的落子点,不然对抗平台会直接认为你的程序有误
 
@@ -41,7 +45,6 @@ extern "C" Point *getPoint(const int M, const int N, const int *top,
     /*
             不要更改这段代码
     */
-    int x = -1, y = -1;  //最终将你的落子点存到x,y中
     int **board = new int *[M];
     for (int i = 0; i < M; i++) {
         board[i] = new int[N];
@@ -49,24 +52,14 @@ extern "C" Point *getPoint(const int M, const int N, const int *top,
             board[i][j] = _board[i * N + j];
         }
     }
+    cout << "Opponent's move: " << lastY << endl;
+    Phase::set(M, N, noX, noY);
     Phase phase(board, top);
-    /*
-            根据你自己的策略来返回落子点,也就是根据你的策略完成对x,y的赋值
-            该部分对参数使用没有限制，为了方便实现，你可以定义自己新的类、.h文件、.cpp文件
-    */
-
-    // a naive example
-    // for (int i = N - 1; i >= 0; i--) {
-    //     if (top[i] > 0) {
-    //         x = top[i] - 1;
-    //         y = i;
-    //         break;
-    //     }
-    // }
-    int score = negamax(phase, -1000, +1000, 1, y);
-
+    mcTree.setPhase(phase);
+    int move = mcTree.search(2800000);
+    cout << "My move: " << move << endl;
     clearArray(M, N, board);
-    return new Point(top[y] - 1, y);
+    return new Point(top[move] - 1, move);
 }
 
 extern "C" void clearPoint(Point *p) {
@@ -81,35 +74,35 @@ void clearArray(int M, int N, int **board) {
     delete[] board;
 }
 
-int negamax(const Phase &phase, int alpha, int beta, int player, int &move) {
-    if (phase.terminal()) {
-        move = -1;
-        return 0;
-    }
-    for (int x = 0; x < phase.N; ++x)
-        if (phase.canPlay(x) && phase.isWinningMove(x, player)) {
-            move = x;
-            return phase.score();
-        }
+// int negamax(const Phase &phase, int alpha, int beta, int player, int &move) {
+//     if (phase.terminal()) {
+//         move = -1;
+//         return 0;
+//     }
+//     for (int x = 0; x < phase.N; ++x)
+//         if (phase.canPlay(x) && phase.isWinningMove(x, player)) {
+//             move = x;
+//             return phase.score();
+//         }
 
-    int max = phase.score() - 1;
-    if (beta > max) {
-        beta = max;
-        if (alpha >= beta) return beta;
-    }
+//     int max = phase.score() - 1;
+//     if (beta > max) {
+//         beta = max;
+//         if (alpha >= beta) return beta;
+//     }
 
-    for (int x = 0; x < phase.N; ++x) {
-        if (phase.canPlay(x)) {
-            Phase newPhase = phase.play(x, player);
-            int nextMove = -1;
-            int score = -negamax(newPhase, -beta, -alpha, 3 - player, nextMove);
-            if (score > alpha) {
-                move = x;
-                alpha = score;
-            }
-            if (score >= beta) return score;
-        }
-    }
+//     for (int x = 0; x < phase.N; ++x) {
+//         if (phase.canPlay(x)) {
+//             Phase newPhase = phase.play(x, player);
+//             int nextMove = -1;
+//             int score = -negamax(newPhase, -beta, -alpha, 3 - player,
+//             nextMove); if (score > alpha) {
+//                 move = x;
+//                 alpha = score;
+//             }
+//             if (score >= beta) return score;
+//         }
+//     }
 
-    return alpha;
-}
+//     return alpha;
+// }
