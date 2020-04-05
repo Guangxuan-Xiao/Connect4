@@ -85,6 +85,15 @@ class Phase {
         return alignment(pos);
     }
 
+    bool isLosingMove(int col, int player) const {
+        Phase phase(*this);
+        phase.play(col, player);
+        for (int i = 0; i < N; ++i) {
+            if (phase.isWinningMove(i, 3 - player)) return true;
+        }
+        return false;
+    }
+
     void printBoard() const {
         cout << "User Positions" << endl;
         for (int i = M - 1; i >= 0; --i) {

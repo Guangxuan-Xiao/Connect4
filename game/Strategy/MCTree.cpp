@@ -63,7 +63,6 @@ int MCTree::select() {
     int player = 1;
     curPhase = initPhase;
     while (!nodes[node].isLeaf()) {
-        // cout << node << endl;
         int move = bestMove(node);
         node = nodes[node].child[move];
         curPhase.play(move, player);
@@ -90,11 +89,22 @@ int MCTree::randomPolicy() {
     return nextMove[rand() % moveNum];
 }
 
+int MCTree::smartPolicy(int player) {
+    int nextMove[MAX_N];
+    int moveNum = 0;
+    for (int i = 0; i < N; ++i)
+        if (curPhase.canPlay(i)) {
+            if (curPhase.isWinningMove(i, player)) return i;
+            if (!curPhase.isLosingMove(i, player)) nextMove[moveNum++] = i;
+        }
+    return nextMove[rand() % moveNum];
+}
+
 double MCTree::rollout(int player) {
     while (!curPhase.terminal()) {
         if (curPhase.userWin()) return curPhase.score();
         if (curPhase.machineWin()) return -curPhase.score();
-        int move = randomPolicy();
+        int move = smartPolicy(player);
         curPhase.play(move, player);
         player = 3 - player;
     }

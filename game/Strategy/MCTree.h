@@ -44,6 +44,7 @@ class MCTree {
     int bestMove(int node);
     void backUp(int node, double value);
     int randomPolicy();
+    int smartPolicy(int player);
     double rollout(int player);
     int expand(int node);
     int select();
