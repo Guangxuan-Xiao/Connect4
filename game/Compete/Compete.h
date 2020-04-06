@@ -4,7 +4,7 @@
 #include "Data.h"
 #include "Point.h"
 
-#define MAX_TIME_SECOND 3
+#define MAX_TIME_SECOND 10000
 
 extern unsigned long timeA;
 extern unsigned long timeB;

@@ -5,5 +5,7 @@
         "ostream": "cpp",
         "cmath": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "python.pythonPath": "/usr/bin/python3.6",
+    "python.formatting.provider": "yapf"
 }
