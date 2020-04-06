@@ -12,7 +12,13 @@ struct Node {
     int parent;
     int child[MAX_N];
     bool isLeaf();
-    char end;
+    void reset(char _player, int _parent) {
+        player = _player;
+        parent = _parent;
+        cnt = value = 0;
+        memset(child, -1, sizeof(child));
+    }
+
     double score() {
         if (cnt == 0) return 0;
         return value / cnt;
@@ -20,12 +26,21 @@ struct Node {
 };
 
 struct NodePool {
-    NodePool() : pool(new Node[NODEPOOL_SIZE]), size(0) {}
-    ~NodePool() { delete[] pool; }
+    NodePool()
+        : pool(new Node[NODEPOOL_SIZE]),
+          queue(new int[NODEPOOL_SIZE]),
+          size(0),
+          head(0),
+          tail(0) {}
     int newNode(char player, int parent);
+    void recycle(int node);
     Node& operator[](int idx) { return pool[idx]; }
+    int* queue;
     Node* pool;
     int size;
+    int head, tail;
+    void push(int node);
+    int pop();
     void printNodes() {
         for (int i = 0; i < size; ++i) {
             cout << "Node " << i << endl;
@@ -41,7 +56,8 @@ struct NodePool {
 
 class MCTree {
    public:
-    void setPhase(const Phase& phase);
+    MCTree() : lastMove(-1) {}
+    void setPhase(const Phase& phase, int move);
     int search(int timeLimit = 2000000);
 
    private:
@@ -54,8 +70,10 @@ class MCTree {
     int expand(int node);
     int select();
     int finalDecision();
+    void moveRoot(int move);
     NodePool nodes;
     int root;
+    int lastMove;
 };
 
 #endif

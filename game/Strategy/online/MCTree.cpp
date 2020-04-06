@@ -40,20 +40,57 @@ int MCTree::bestMove(int node) {
     return ret;
 }
 
-int NodePool::newNode(char player, int parent) {
-    pool[size].player = player;
-    pool[size].parent = parent;
-    pool[size].cnt = pool[size].value = pool[size].end = 0;
-    memset(pool[size].child, -1, sizeof(pool[size].child));
-    return size++;
+void NodePool::push(int node) {
+    if (++head > NODEPOOL_SIZE) tail = 1;
+    queue[tail] = node;
 }
 
-void MCTree::setPhase(const Phase& phase) {
+int NodePool::pop() {
+    if (++head > NODEPOOL_SIZE) head = 1;
+    return queue[head];
+}
+
+int NodePool::newNode(char player, int parent) {
+    if (size < NODEPOOL_SIZE) {
+        pool[size].reset(player, parent);
+        return size++;
+    }
+    int idx = pop();
+    for (int i = 0; i < MAX_N; ++i)
+        if (pool[idx].child[i] != -1) push(pool[idx].child[i]);
+    pool[idx].reset(player, parent);
+    return idx;
+}
+
+void NodePool::recycle(int node) {
+    pool[node].reset(0, 0);
+    push(node);
+}
+
+void MCTree::moveRoot(int move) {
+    for (int i = 0; i < initPhase.N; ++i)
+        if (i != move && nodes[root].child[i] != -1)
+            nodes.push(nodes[root].child[i]);
+    if (nodes[root].child[move] == -1)
+        nodes[root].reset(2, -1);
+    else {
+        int oldRoot = root;
+        root = nodes[root].child[move];
+        nodes[root].parent = -1;
+        nodes.recycle(oldRoot);
+    }
+}
+
+void MCTree::setPhase(const Phase& phase, int move) {
     initPhase = phase;
     curPhase = phase;
-    nodes.size = 0;
-    root = nodes.newNode(2, -1);
-    expand(root);
+    if (lastMove == -1)
+        root = nodes.newNode(2, -1);
+    else {
+        moveRoot(lastMove);
+        moveRoot(move);
+    }
+    if (nodes[root].isLeaf()) expand(root);
 }
 
 int MCTree::select() {
@@ -78,9 +115,8 @@ int MCTree::expand(int node) {
                 nodes[node].child[i] = nodes.newNode(3 - player, node);
                 return nodes[node].child[i];
             }
-            if (!curPhase.isLosingMove(i, player)) {
+            if (!curPhase.isLosingMove(i, player))
                 nodes[node].child[i] = nodes.newNode(3 - player, node);
-            }
         }
     }
     for (int i = 0; i < initPhase.N; ++i)
@@ -95,9 +131,6 @@ int MCTree::randomPolicy() {
     int moveNum = 0;
     for (int i = 0; i < initPhase.N; ++i)
         if (curPhase.canPlay(i)) nextMove[moveNum++] = i;
-    if (moveNum == 0) {
-        curPhase.printBoard();
-    }
     return nextMove[rand() % moveNum];
 }
 
@@ -123,6 +156,7 @@ double MCTree::rollout(int node) {
         if (curPhase.userWin()) return curPhase.score() * sgn;
         if (curPhase.machineWin()) return -curPhase.score() * sgn;
         int move = smartPolicy(player);
+        //int move = randomPolicy();
         curPhase.play(move, player);
         player = 3 - player;
     }
@@ -161,5 +195,5 @@ int MCTree::search(int timeLimit) {
         if (nodes[cur].cnt != 0) cur = expand(cur);
         backUp(cur, rollout(cur));
     }
-    return finalDecision();
+    return lastMove = finalDecision();
 }

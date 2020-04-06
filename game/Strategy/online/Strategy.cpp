@@ -55,11 +55,13 @@ extern "C" Point *getPoint(const int M, const int N, const int *top,
 
     Phase::set(M, N, noX, noY);
     Phase phase(board, top);
-    mcTree.setPhase(phase);
-    int move = mcTree.search(TIME_LIMIT);
+    mcTree.setPhase(phase, lastY);
 #ifdef OUTPUT
     cout << "Opponent's move: " << lastY << endl;
     phase.printBoard();
+#endif
+    int move = mcTree.search(TIME_LIMIT);
+#ifdef OUTPUT
     cout << "My move: " << move << endl;
 #endif
     clearArray(M, N, board);

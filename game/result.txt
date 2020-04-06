@@ -1,1 +1,11 @@
 0:
+2	103	111
+2	105	101
+
+Stat:
+ratio of A wins : 0
+ratio of B wins : 1
+ratio of Tie : 0
+
+ratio of (A wins + tie) : 0
+ratio of (B wins + tie) : 1
