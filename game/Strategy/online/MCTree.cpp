@@ -50,6 +50,7 @@ int NodePool::newNode(char player, int parent) {
 
 void MCTree::setPhase(const Phase& phase) {
     initPhase = phase;
+    curPhase = phase;
     nodes.size = 0;
     root = nodes.newNode(2, -1);
     expand(root);
@@ -72,11 +73,21 @@ int MCTree::select() {
 int MCTree::expand(int node) {
     int player = nodes[node].player;
     for (int i = 0; i < initPhase.N; ++i) {
-        if (curPhase.canPlay(i))
-            nodes[node].child[i] = nodes.newNode(3 - player, node);
+        if (curPhase.canPlay(i)) {
+            if (curPhase.isWinningMove(i, player)) {
+                nodes[node].child[i] = nodes.newNode(3 - player, node);
+                return nodes[node].child[i];
+            }
+            if (!curPhase.isLosingMove(i, player)) {
+                nodes[node].child[i] = nodes.newNode(3 - player, node);
+            }
+        }
     }
     for (int i = 0; i < initPhase.N; ++i)
         if (nodes[node].child[i] != -1) return nodes[node].child[i];
+    for (int i = 0; i < initPhase.N; ++i)
+        if (curPhase.canPlay(i))
+            return nodes[node].child[i] = nodes.newNode(3 - player, node);
 }
 
 int MCTree::randomPolicy() {
@@ -96,8 +107,12 @@ int MCTree::smartPolicy(int player) {
     for (int i = 0; i < initPhase.N; ++i)
         if (curPhase.canPlay(i)) {
             if (curPhase.isWinningMove(i, player)) return i;
-            nextMove[moveNum++] = i;
+            if (!curPhase.isLosingMove(i, player)) nextMove[moveNum++] = i;
         }
+    if (moveNum == 0) {
+        for (int i = 0; i < initPhase.N; ++i)
+            if (curPhase.canPlay(i)) return i;
+    }
     return nextMove[rand() % moveNum];
 }
 
@@ -107,7 +122,7 @@ double MCTree::rollout(int node) {
     while (!curPhase.terminal()) {
         if (curPhase.userWin()) return curPhase.score() * sgn;
         if (curPhase.machineWin()) return -curPhase.score() * sgn;
-        int move = randomPolicy();
+        int move = smartPolicy(player);
         curPhase.play(move, player);
         player = 3 - player;
     }
