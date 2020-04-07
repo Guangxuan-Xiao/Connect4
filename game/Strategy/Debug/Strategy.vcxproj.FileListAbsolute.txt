@@ -1,0 +1,4 @@
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Debug\Strategy.dll
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Debug\Strategy.pdb
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.dll
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.pdb

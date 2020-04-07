@@ -1,1 +1,121 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: The Windows SDK version 8.1 was not found. Install the required version of Windows SDK or change the SDK version in the project property pages or by right-clicking the solution and selecting "Retarget solution".
+﻿  Judge.cpp
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Judge.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Judge.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+  Strategy.cpp
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Strategy.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Strategy.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Point.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\constant.h(3,27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.h(18,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  MCTree.cpp
+  Note: including file: D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.h
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\iostream
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\yvals_core.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vcruntime.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\sal.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\concurrencysal.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vadefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xkeycheck.h
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\istream
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\ostream
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\ios
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xlocnum
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\climits
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\limits.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cmath
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\yvals.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\crtdbg.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vcruntime_new_debug.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vcruntime_new.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\use_ansi.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cstdlib
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\math.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdlib.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_malloc.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_search.h
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stddef.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdlib.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xtr1common
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cstdio
+  Note: including file:        C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_stdio_config.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\streambuf
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xiosbase
+  Note: including file:         C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\share.h
+  Note: including file:          C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_share.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\system_error
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cerrno
+  Note: including file:           C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\errno.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdexcept
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\exception
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\type_traits
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xstddef
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cstddef
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\initializer_list
+  Note: including file:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\malloc.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vcruntime_exception.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\eh.h
+  Note: including file:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_terminate.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xstring
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\iosfwd
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cstring
+  Note: including file:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memory.h
+  Note: including file:                C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_memcpy_s.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vcruntime_string.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstring.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cwchar
+  Note: including file:              C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\wchar.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wconio.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wctype.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wdirect.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wio.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wprocess.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wtime.h
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/stat.h
+  Note: including file:                C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\sys/types.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xmemory
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cstdint
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\stdint.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\limits
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\cfloat
+  Note: including file:               C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\float.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\new
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xatomic.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\intrin0.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xutility
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\utility
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\concepts
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xpolymorphic_allocator.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\tuple
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xcall_once.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xerrc.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xlocale
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\memory
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\typeinfo
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vcruntime_typeinfo.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xfacet
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xlocinfo
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\xlocinfo.h
+  Note: including file:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\ctype.h
+  Note: including file:            C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\locale.h
+  Note: including file:  D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Phase.hpp
+  Note: including file:   C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\assert.h
+  Note: including file:   D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\constant.h
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\constant.h(3,27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Note: including file:  D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Point.h
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Point.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.h(18,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Note: including file: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
+  Note: including file: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vector
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.cpp(184,16): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.cpp(108): warning C4715: 'MCTree::expand': not all control paths return a value
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+     Creating library D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.lib and object D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.exp
+  LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+  Strategy.vcxproj -> D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.dll

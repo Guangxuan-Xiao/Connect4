@@ -1,0 +1,10 @@
+﻿  Strategy.cpp
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Strategy.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Strategy.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Point.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\constant.h(3,27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\MCTree.h(18,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Strategy.cpp(41,41): error C2375: 'getPoint': redefinition; different linkage
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Strategy.h(13): message : see declaration of 'getPoint'
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Strategy.cpp(70,39): error C2375: 'clearPoint': redefinition; different linkage
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\AI_Windows\Strategy\Strategy\Strategy.h(16): message : see declaration of 'clearPoint'

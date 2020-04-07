@@ -4,7 +4,14 @@
         "algorithm": "cpp",
         "ostream": "cpp",
         "cmath": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "optional": "cpp",
+        "istream": "cpp",
+        "system_error": "cpp",
+        "array": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
     },
     "python.pythonPath": "/usr/bin/python3.6",
     "python.formatting.provider": "yapf"

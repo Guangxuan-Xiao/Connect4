@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/game/Compete/Compete",
-            "args": ["${workspaceFolder}/game/TestCases/2.so", "${workspaceFolder}/game/so/Strategy.so", "${workspaceFolder}/game/result.txt", "1"],
+            "args": ["${workspaceFolder}/game/TestCases/100.so", "${workspaceFolder}/game/so/Strategy.so.d", "${workspaceFolder}/game/result.txt", "1"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
