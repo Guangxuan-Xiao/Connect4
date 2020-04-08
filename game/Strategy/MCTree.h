@@ -66,13 +66,13 @@ private:
 	int expand(int node);
 	int select();
 	int finalDecision();
-	// int weightedSample(int moveNum);
+	int weightedSample(int moveNum);
 	void moveRoot(int move);
 	NodePool nodes;
 	int root;
 	int lastMove;
 	int nextMove[MAX_N];
-	int adjustedMove[MAX_N << 2];
+	int adjustedMove[MAX_N<<3]; 
 };
 
 #endif

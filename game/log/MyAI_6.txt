@@ -1,0 +1,3 @@
+Round 0 seed: 1586322357 :
+M = 12, N = 9
+A first:

@@ -1,13 +1,9 @@
-﻿  Judge.cpp
-D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Judge.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Judge.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
-  Strategy.cpp
+﻿  Strategy.cpp
 D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Strategy.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
 D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Strategy.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
 D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Point.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
 D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\constant.h(3,27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.h(18,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
   MCTree.cpp
   Note: including file: D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.h
   Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\iostream
@@ -113,8 +109,8 @@ D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\
 D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.h(18,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Note: including file: C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\time.h
   Note: including file: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\vector
-D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.cpp(184,16): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
-D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.cpp(108): warning C4715: 'MCTree::expand': not all control paths return a value
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.cpp(176,22): warning C4244: 'initializing': conversion from 'time_t' to 'int', possible loss of data
+D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\MCTree.cpp(102): warning C4715: 'MCTree::expand': not all control paths return a value
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.lib and object D:\Documents\2019-2020Spring\Learning\Intro2AI\hw\hw2\ConnectFour\game\Strategy\Debug\Strategy.exp
   LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance

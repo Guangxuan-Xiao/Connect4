@@ -1,3 +1,70 @@
-Round 0 seed: 1586277402 :
-M = 9, N = 9
+Round 0 seed: 1586277706 :
+M = 9, N = 10
 A first:
+. . . B . A A . . . 
+. . . A . B A . A . 
+B . B A . B B . B . 
+A . A B . A B B A A 
+B . B A . A A B B B 
+B . A B . B B X A A 
+A . B A . A B A B B 
+B B A B B A A A B A 
+A B A B A B A B A A 
+B - won
+B first:
+. . . A . . . . . . 
+. A A A B . . . . . 
+. B B B A . A . . . 
+B B B B A . B . . . 
+B A A A B . A A . . 
+A B B B A . B X . . 
+B A A B B . A A A . 
+B B B A A . A A B . 
+B B B A B . B A A . 
+B - won
+
+Round 1 seed: 1586278020 :
+M = 11, N = 12
+A first:
+. . B . A . A B . A . A 
+. . A . A . B B . B . B 
+. . A . A . A A . A . A 
+. . B . B . B B . B . B 
+X . A . B . B A . A . A 
+. . B . A . A B . B . B 
+. . A . B . B A B B . A 
+. . B A A A A B A A . B 
+A . A B B B A B B B . B 
+B B B A A A B A B A . A 
+A A A B A A B A B A B B 
+A - won
+B first:
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+X . . . . . . . . . . . 
+. . . . A . . . B . . . 
+. . . . B . . . A . . . 
+. . . A A A A B B . . . 
+. . . B A A B A B . . . 
+. . . A B A B A B A . . 
+. . . B A A B B A B B B 
+A - won
+
+Round 2 seed: 1586278334 :
+M = 11, N = 9
+A first:
+A . A A . . B . . 
+A A B A . B X . . 
+A A A B . A B B B 
+B B B A . B B A A 
+A A A B . A A B B 
+B B B A . B B A A 
+A A A B . A B B B 
+B B B A . B A A A 
+A A A B . A B B B 
+B B B A . B A A A 
+A A B A . B A B B 
+A - won
+B first:
