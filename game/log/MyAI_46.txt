@@ -1,3 +1,0 @@
-Round 0 seed: 1586322356 :
-M = 11, N = 11
-A first:
