@@ -1,11 +1,1 @@
 0:
-1	59600	51116
-1	54387	46132
-
-Stat:
-ratio of A wins : 1
-ratio of B wins : 0
-ratio of Tie : 0
-
-ratio of (A wins + tie) : 1
-ratio of (B wins + tie) : 0
