@@ -9,219 +9,254 @@
 using namespace std;
 
 class Phase {
-public:
-	Phase() : moves(0) {
-		memset(user, 0, sizeof(user));
-		memset(machine, 0, sizeof(machine));
-		memset(top, 0, sizeof(top));
-	}
+   public:
+    Phase() : moves(0) {
+        memset(user, 0, sizeof(user));
+        memset(machine, 0, sizeof(machine));
+        memset(top, 0, sizeof(top));
+    }
 
-	Phase(int** board, const int* _top) : moves(0) {
-		memset(user, 0, sizeof(user));
-		memset(machine, 0, sizeof(machine));
-		memset(top, 0, sizeof(top));
-		for (int i = 0; i < N; ++i) top[i] = _top[i];
-		for (int i = 0; i < M; ++i) {
-			for (int j = 0; j < N; ++j) {
-				setPiece(i, j, board[i][j]);
-				if (board[i][j]) ++moves;
-			}
-		}
-	}
+    Phase(int** board, const int* _top) : moves(0) {
+        memset(user, 0, sizeof(user));
+        memset(machine, 0, sizeof(machine));
+        memset(top, 0, sizeof(top));
+        for (int i = 0; i < N; ++i) top[i] = _top[i];
+        for (int i = 0; i < M; ++i) {
+            for (int j = 0; j < N; ++j) {
+                setPiece(i, j, board[i][j]);
+                if (board[i][j]) ++moves;
+            }
+        }
+    }
 
-	Phase(const Phase& phase) : moves(phase.moves) {
-		memmove(user, phase.user, sizeof(user));
-		memmove(machine, phase.machine, sizeof(machine));
-		memmove(top, phase.top, sizeof(top));
-	}
+    Phase(const Phase& phase) : moves(phase.moves) {
+        memmove(user, phase.user, sizeof(user));
+        memmove(machine, phase.machine, sizeof(machine));
+        memmove(top, phase.top, sizeof(top));
+    }
 
-	Phase& operator=(const Phase& phase) {
-		moves = phase.moves;
-		memmove(user, phase.user, sizeof(user));
-		memmove(machine, phase.machine, sizeof(machine));
-		memmove(top, phase.top, sizeof(top));
-		return *this;
-	}
+    Phase& operator=(const Phase& phase) {
+        moves = phase.moves;
+        memmove(user, phase.user, sizeof(user));
+        memmove(machine, phase.machine, sizeof(machine));
+        memmove(top, phase.top, sizeof(top));
+        return *this;
+    }
 
-	bool canPlay(int col) const {
-		assert(col < N&& col >= 0);
-		return top[col] > 0;
-	}
+    bool canPlay(int col) const {
+        assert(col < N && col >= 0);
+        return top[col] > 0;
+    }
 
-	void play(int col, int player) {
-		if (player == 1)
-			user[col] |= (1 << (M - top[col]));
-		else if (player == 2)
-			machine[col] |= (1 << (M - top[col]));
-		else {
-			cout << "Invalid Player " << player << endl;
-			exit(1);
-		}
-		top[col] -= 1;
-		if (noY == col && top[col] == noX + 1) top[col] -= 1;
-		moves = moves + 1;
-	}
+    void play(int col, int player) {
+        if (player == 1)
+            user[col] |= (1 << (M - top[col]));
+        else if (player == 2)
+            machine[col] |= (1 << (M - top[col]));
+        else {
+            cout << "Invalid Player " << player << endl;
+            exit(1);
+        }
+        top[col] -= 1;
+        if (noY == col && top[col] == noX + 1) top[col] -= 1;
+        moves = moves + 1;
+    }
 
-	bool userWin() const { return alignment(user); }
+    bool userWin() const { return alignment(user); }
 
-	bool machineWin() const { return alignment(machine); }
+    bool machineWin() const { return alignment(machine); }
 
-	int winner() const {
-		if (alignment(user)) return 1;
-		if (alignment(machine)) return 2;
-		return 0;
-	}
+    int winner() const {
+        if (alignment(user)) return 1;
+        if (alignment(machine)) return 2;
+        return 0;
+    }
 
-	bool terminal() const {
-		for (int i = 0; i < N; ++i)
-			if (top[i] > 0) return false;
-		return true;
-	}
+    bool terminal() const {
+        for (int i = 0; i < N; ++i)
+            if (top[i] > 0) return false;
+        return true;
+    }
 
-	bool isWinningMove(int col, int player) const {
-		unsigned int pos[MAX_N] = { 0 };
-		if (player == 1)
-			memmove(pos, user, sizeof(user));
-		else
-			memmove(pos, machine, sizeof(machine));
-		pos[col] |= (1 << (M - top[col]));
-		return centralAlign(pos, col);
-	}
+    bool isWinningMove(int col, int player) const {
+        unsigned short pos[MAX_N] = {0};
+        if (player == 1)
+            memmove(pos, user, sizeof(user));
+        else
+            memmove(pos, machine, sizeof(machine));
+        pos[col] |= (1 << (M - top[col]));
+        return centralAlign(pos, col);
+    }
 
-	bool isLosingMove(int col, int player) const {
-		unsigned int pos[MAX_N] = { 0 };
-		int newtop = top[col] - 1;
-		if (noY == col && newtop == noX + 1) newtop -= 1;
-		if (player == 2)
-			memmove(pos, user, sizeof(user));
-		else
-			memmove(pos, machine, sizeof(machine));
-		pos[col] |= (1 << (M - newtop));
-		return centralAlign(pos, col);
-	}
+    bool isLosingMove(int col, int player) const {
+        unsigned short pos[MAX_N] = {0};
+        int newtop = top[col] - 1;
+        if (noY == col && newtop == noX + 1) newtop -= 1;
+        if (player == 2)
+            memmove(pos, user, sizeof(user));
+        else
+            memmove(pos, machine, sizeof(machine));
+        pos[col] |= (1 << (M - newtop));
+        return centralAlign(pos, col);
+    }
 
-	void printBoard() const {
-		cout << "Board:" << endl;
-		for (int i = M - 1; i >= 0; --i) {
-			for (int j = 0; j < N; ++j) {
-				if (M - 1 - i == noX && j == noY) {
-					cout << "X"
-						<< " ";
-					continue;
-				}
-				if ((user[j] >> i) & 1)
-					cout << "U"
-					<< " ";
-				else if ((machine[j] >> i) & 1)
-					cout << "M"
-					<< " ";
-				else
-					cout << "."
-					<< " ";
-			}
-			cout << endl;
-		}
-	}
+    void printBoard() const {
+        cout << "Board:" << endl;
+        for (int i = M - 1; i >= 0; --i) {
+            for (int j = 0; j < N; ++j) {
+                if (M - 1 - i == noX && j == noY) {
+                    cout << "X"
+                         << " ";
+                    continue;
+                }
+                if ((user[j] >> i) & 1)
+                    cout << "U"
+                         << " ";
+                else if ((machine[j] >> i) & 1)
+                    cout << "M"
+                         << " ";
+                else
+                    cout << "."
+                         << " ";
+            }
+            cout << endl;
+        }
+    }
 
-	static void set(int m, int n, int _noX, int _noY) {
-		M = m;
-		N = n;
-		noX = _noX;
-		noY = _noY;
-	}
+    static void set(int m, int n, int _noX, int _noY) {
+        M = m;
+        N = n;
+        noX = _noX;
+        noY = _noY;
+    }
 
-	double score() const { return 1 - (double)moves / (M * N); }
+    int moveScore(int col, char player) const {
+        int mid = (N >> 1);
+        int score = 1;
+        score += align3(col, player);
+        if (score > 100000) return score;
+        score += align3(col, 3 - player);
+        if (score > 100000) return score;
+        score *= (col < mid) ? col / 3 + 1 : (N - 1 - col) / 3 + 1;
+        return score;
+    }
 
-	unsigned char top[MAX_N];
-	unsigned int user[MAX_N], machine[MAX_N];
-	int moves;
-	static int M, N;
-	static int noX, noY;
+    float score() const { return 1 - (float)moves / (M * N); }
 
-private:
-	bool alignment(const unsigned int* pos) const {
-		// Horizontal
-		unsigned int m[MAX_N] = { 0 };
-		for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & pos[i + 1];
-		for (int i = 0; i < N - 3; ++i)
-			if (m[i] & m[i + 2]) return true;
+    unsigned char top[MAX_N];
+    unsigned short user[MAX_N], machine[MAX_N];
+    int moves;
+    static int M, N;
+    static int noX, noY;
 
-		// Vertical
-		for (int i = 0; i < N; ++i) {
-			m[i] = pos[i] & (pos[i] >> 1);
-			if (m[i] & (m[i] >> 2)) return true;
-		}
+   private:
+    bool alignment(const unsigned short* pos) const {
+        // Horizontal
+        unsigned short m[MAX_N] = {0};
+        for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & pos[i + 1];
+        for (int i = 0; i < N - 3; ++i)
+            if (m[i] & m[i + 2]) return true;
 
-		// Diagnal 1: Bottom-left to upper-right
-		for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
-		for (int i = 0; i < N - 3; ++i)
-			if (m[i] & (m[i + 2] >> 2)) return true;
+        // Vertical
+        for (int i = 0; i < N; ++i) {
+            m[i] = pos[i] & (pos[i] >> 1);
+            if (m[i] & (m[i] >> 2)) return true;
+        }
 
-		// Diagnal 2: Upper-left to bottom-right
-		for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
-		for (int i = 0; i < N - 3; ++i)
-			if (m[i] & (m[i + 2] << 2)) return true;
+        // Diagnal 1: Bottom-left to upper-right
+        for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
+        for (int i = 0; i < N - 3; ++i)
+            if (m[i] & (m[i + 2] >> 2)) return true;
 
-		return false;
-	}
+        // Diagnal 2: Upper-left to bottom-right
+        for (int i = 0; i < N - 1; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
+        for (int i = 0; i < N - 3; ++i)
+            if (m[i] & (m[i + 2] << 2)) return true;
 
-	bool centralAlign(const unsigned int* pos, int col) const {
-		unsigned int m[MAX_N] = { 0 };
-		int left = (col - 3) < 0 ? 0 : col - 3;
-		int right = (col + 3) < N ? col + 3 : N - 1;
-		for (int i = left; i < right; ++i) m[i] = pos[i] & pos[i + 1];
-		for (int i = left; i < right - 2; ++i)
-			if (m[i] & m[i + 2]) return true;
+        return false;
+    }
 
-		// Vertical
-		m[col] = pos[col] & (pos[col] >> 1);
-		if (m[col] & (m[col] >> 2)) return true;
-		// Diagnal 1: Bottom-left to upper-right
-		for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
-		for (int i = left; i < right - 2; ++i)
-			if (m[i] & (m[i + 2] >> 2)) return true;
+    bool centralAlign(const unsigned short* pos, int col) const {
+        unsigned short m[MAX_N] = {0};
+        int left = (col - 3) < 0 ? 0 : col - 3;
+        int right = (col + 3) < N ? col + 3 : N - 1;
+        for (int i = left; i < right; ++i) m[i] = pos[i] & pos[i + 1];
+        for (int i = left; i < right - 2; ++i)
+            if (m[i] & m[i + 2]) return true;
 
-		// Diagnal 2: Upper-left to bottom-right
-		for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
-		for (int i = left; i < right - 2; ++i)
-			if (m[i] & (m[i + 2] << 2)) return true;
-		return false;
-	}
+        // Vertical
+        m[col] = pos[col] & (pos[col] >> 1);
+        if (m[col] & (m[col] >> 2)) return true;
+        // Diagnal 1: Bottom-left to upper-right
+        for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
+        for (int i = left; i < right - 2; ++i)
+            if (m[i] & (m[i + 2] >> 2)) return true;
 
-	int open3(const unsigned int* pos, int col) const { 
-		unsigned int m[MAX_N] = { 0 };
-		int left = (col - 3) < 0 ? 0 : col - 3;
-		int right = (col + 2) < N ? col + 2 : N - 1;
-		for (int i = left; i < right; ++i) m[i] = pos[i] & pos[i + 1];
-		for (int i = left; i < right - 2; ++i)
-			if (m[i] & m[i + 2]) return true;
+        // Diagnal 2: Upper-left to bottom-right
+        for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
+        for (int i = left; i < right - 2; ++i)
+            if (m[i] & (m[i + 2] << 2)) return true;
+        return false;
+    }
 
-		// Vertical
-		m[col] = pos[col] & (pos[col] >> 1);
-		if (m[col] & (m[col] >> 2)) return true;
+    int align3(int col, char player) const {
+        unsigned short pos[MAX_N] = {0};
+        if (player == 1)
+            memmove(pos, user, sizeof(user));
+        else
+            memmove(pos, machine, sizeof(machine));
+        pos[col] |= (1 << (M - top[col]));
+        int score = 0;
+        unsigned short m[MAX_N] = {0};
+        // Horizontal
+        int left = (col - 3) < 0 ? 0 : col - 3;
+        int right = (col + 3) < N ? col + 3 : N - 1;
+        for (int i = left; i < right; ++i) m[i] = pos[i] & pos[i + 1];
+        for (int i = left; i < right - 2; ++i)
+            if (m[i] & m[i + 2]) return 100000;
+        for (int i = left; i < col - 1; ++i)
+            if (m[i] & (1 << (M - top[col]))) ++score;
+        for (int i = col + 1; i < right; ++i)
+            if (m[i] & (1 << (M - top[col]))) ++score;
 
-		// Diagnal 1: Bottom-left to upper-right
-		for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
-		for (int i = left; i < right - 2; ++i)
-			if (m[i] & (m[i + 2] >> 2)) return true;
+        // Vertical
+        m[col] = pos[col] & (pos[col] >> 1);
+        if (m[col] & (m[col] >> 2)) return 100000;
+        if ((m[col] >> (M - top[col] - 2)) & 1) score++;
 
-		// Diagnal 2: Upper-left to bottom-right
-		for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
-		for (int i = left; i < right - 2; ++i)
-			if (m[i] & (m[i + 2] << 2)) return true;
-		return false;
-		; 
-	}
+        // Diagnal 1: Bottom-left to upper-right
+        for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
+        for (int i = left; i < right - 2; ++i)
+            if (m[i] & (m[i + 2] >> 2)) return 100000;
+        for (int i = left; i < col - 1; ++i)
+            if (m[i] & (1 << (M - top[col] - col + i))) ++score;
+        for (int i = col + 1; i < right; ++i)
+            if (m[i] & (1 << (M - top[col] - col + 1))) ++score;
 
-	void setPiece(int x, int y, int player) {
-		if (player == 1) {
-			user[y] |= 1 << (M - x - 1);
-		}
-		else if (player == 2) {
-			machine[y] |= 1 << (M - x - 1);
-		}
-		else
-			return;
-	}
+        // Diagnal 2: Upper-left to bottom-right
+        for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
+        for (int i = left; i < right - 2; ++i)
+            if (m[i] & (m[i + 2] << 2)) return 100000;
+        for (int i = left; i < col - 1; ++i)
+            if (m[i] & (1 << (M - top[col] + col - i))) ++score;
+        for (int i = col + 1; i < right; ++i)
+            if (m[i] & (1 << (M - top[col] + col - 1))) ++score;
+
+        return score;
+    }
+
+    void setPiece(int x, int y, int player) {
+        if (player == 1) {
+            user[y] |= 1 << (M - x - 1);
+        } else if (player == 2) {
+            machine[y] |= 1 << (M - x - 1);
+        } else
+            return;
+    }
+
+    inline int get(int x, int y, int player) {
+        return player == 1 ? user[y] & (1 << (M - x - 1))
+                           : machine[y] & (1 << (M - x - 1));
+    }
 };
 #endif

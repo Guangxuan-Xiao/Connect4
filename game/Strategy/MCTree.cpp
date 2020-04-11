@@ -14,7 +14,7 @@ bool Node::isLeaf() {
     return true;
 }
 
-void MCTree::backUp(int node, double value) {
+void MCTree::backUp(int node, float value) {
     while (node != -1) {
         ++nodes[node].cnt;
         nodes[node].value += value;
@@ -25,14 +25,14 @@ void MCTree::backUp(int node, double value) {
 
 int MCTree::bestMove(int node) {
     int ret = -1;
-    double maxScore = -INFINITY;
-    double log_N = log(nodes[node].cnt + 0.001);
+    float maxScore = -INFINITY;
+    float log_N = logf(nodes[node].cnt + 0.001);
     for (int i = 0; i < initPhase.N; ++i) {
         int child = nodes[node].child[i];
         if (child == -1) continue;
         if (nodes[child].cnt == 0) return i;
-        double score =
-            nodes[child].score() + UCB_C * sqrt(log_N / (nodes[child].cnt));
+        float score =
+            nodes[child].score() + UCB_C * sqrtf(log_N / (nodes[child].cnt));
         if (score > maxScore) {
             maxScore = score;
             ret = i;
@@ -108,7 +108,7 @@ int MCTree::expand(int node) {
             return nodes[node].child[i] = nodes.newNode(3 - player, node);
 }
 
-int MCTree::weightedSample(int moveNum) {
+int MCTree::centerSample(int moveNum) {
     int i = 0;
     for (int j = 0; j < moveNum; ++j) {
         int weight = 0, mid = (moveNum >> 1);
@@ -122,37 +122,28 @@ int MCTree::weightedSample(int moveNum) {
     return adjustedMove[rand() % i];
 }
 
-int MCTree::randomPolicy() {
+int MCTree::scoreSample(int moveNum) {
+    int score[MAX_N] = {0};
+    // for (int i = 0; i < moveNum;++i) {
+    //     score[MAX_N]
+    // }
+    return 0;
+}
+
+int MCTree::policy() {
     int moveNum = 0;
     for (int i = 0; i < initPhase.N; ++i)
         if (curPhase.canPlay(i)) nextMove[moveNum++] = i;
-    return nextMove[weightedSample(moveNum)];
+    return nextMove[centerSample(moveNum)];
 }
 
-int MCTree::smartPolicy(int player) {
-    int moveNum = 0;
-    for (int i = 0; i < initPhase.N; ++i)
-        if (curPhase.canPlay(i)) {
-            // if (curPhase.isWinningMove(i, player)) return i;
-            if (curPhase.isWinningMove(i, 3 - player)) return i;
-            // if (!curPhase.isLosingMove(i, player))
-            nextMove[moveNum++] = i;
-        }
-    if (moveNum == 0) {
-        for (int i = 0; i < initPhase.N; ++i)
-            if (curPhase.canPlay(i)) return i;
-    }
-    return nextMove[weightedSample(moveNum)];
-}
-
-double MCTree::rollout(int node) {
+float MCTree::rollout(int node) {
     int player = nodes[node].player;
     int sgn = ((player == 2) ? 1 : -1);
     while (!curPhase.terminal()) {
         if (curPhase.userWin()) return sgn;
         if (curPhase.machineWin()) return -sgn;
-        // int move = smartPolicy(player);
-        int move = randomPolicy();
+        int move = policy();
         curPhase.play(move, player);
         player = 3 - player;
     }
@@ -161,11 +152,11 @@ double MCTree::rollout(int node) {
 
 int MCTree::finalDecision() {
     int move = -1;
-    double maxScore = INT_MIN;
+    float maxScore = INT_MIN;
     for (int i = 0; i < initPhase.N; ++i) {
         int child = nodes[root].child[i];
         if (child == -1) continue;
-        double score = nodes[child].score();
+        float score = nodes[child].score();
 #ifdef OUTPUT
         cerr << "Move: " << i << " Score: " << score
              << " Cnt: " << nodes[child].cnt << " Value: " << nodes[child].value
