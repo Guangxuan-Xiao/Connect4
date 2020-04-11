@@ -55,14 +55,14 @@ class MCTree {
     Phase initPhase, curPhase;
     int bestMove(int node);
     void backUp(int node, float value);
-    int policy();
+    int randomPolicy();
     int smartPolicy(int player);
     float rollout(int node);
     int expand(int node);
     int select();
     int finalDecision();
-    int sample(int moveNum);
-    int scoreSample(int moveNum);
+    int centerSample(int moveNum);
+    int scoreSample(int moveNum, int player);
     void moveRoot(int move);
     NodePool nodes;
     int root;
