@@ -61,14 +61,14 @@ class MCTree {
     int expand(int node);
     int select();
     int finalDecision();
-    int centerSample(int moveNum);
+    int sample(int moveNum);
     int scoreSample(int moveNum);
     void moveRoot(int move);
     NodePool nodes;
     int root;
     int lastMove;
     int nextMove[MAX_N];
-    int adjustedMove[MAX_N << 3];
+	int score[MAX_N];
 };
 
 #endif

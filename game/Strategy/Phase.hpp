@@ -43,8 +43,7 @@ class Phase {
         return *this;
     }
 
-    bool canPlay(int col) const {
-        assert(col < N && col >= 0);
+    inline bool canPlay(int col) const {
         return top[col] > 0;
     }
 
@@ -252,11 +251,6 @@ class Phase {
             machine[y] |= 1 << (M - x - 1);
         } else
             return;
-    }
-
-    inline int get(int x, int y, int player) {
-        return player == 1 ? user[y] & (1 << (M - x - 1))
-                           : machine[y] & (1 << (M - x - 1));
     }
 };
 #endif
