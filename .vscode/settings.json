@@ -11,7 +11,9 @@
         "array": "cpp",
         "tuple": "cpp",
         "type_traits": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "*.tcc": "cpp",
+        "vector": "cpp"
     },
     "python.pythonPath": "/usr/bin/python3.6",
     "python.formatting.provider": "yapf"

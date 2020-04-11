@@ -158,7 +158,8 @@ float MCTree::rollout(int node) {
     while (!curPhase.terminal()) {
         if (curPhase.userWin()) return sgn;
         if (curPhase.machineWin()) return -sgn;
-        int move = randomPolicy();
+        // int move = randomPolicy();
+        int move = smartPolicy(player);
         curPhase.play(move, player);
         player = 3 - player;
     }

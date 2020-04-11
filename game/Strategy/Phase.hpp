@@ -43,9 +43,7 @@ class Phase {
         return *this;
     }
 
-    inline bool canPlay(int col) const {
-        return top[col] > 0;
-    }
+    inline bool canPlay(int col) const { return top[col] > 0; }
 
     void play(int col, int player) {
         if (player == 1)
@@ -136,7 +134,7 @@ class Phase {
         if (score > 100000) return score;
         score += align3(col, 3 - player);
         if (score > 100000) return score;
-        score *= (col < mid) ? col / 3 + 1 : (N - 1 - col) / 3 + 1;
+        score += (col < mid) ? col / 3 : (N - 1 - col) / 3;
         return score;
     }
 

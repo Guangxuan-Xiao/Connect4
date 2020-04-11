@@ -85,7 +85,7 @@ int MCTree::expand(int node) {
         if (nodes[node].child[i] != -1) return nodes[node].child[i];
 }
 
-int MCTree::policy() {
+int MCTree::randomPolicy() {
     int nextMove[MAX_N];
     int moveNum = 0;
     for (int i = 0; i < N; ++i)
@@ -110,7 +110,7 @@ double MCTree::rollout(int player) {
     while (!curPhase.terminal()) {
         if (curPhase.userWin()) return curPhase.score() * sgn;
         if (curPhase.machineWin()) return -curPhase.score() * sgn;
-        int move = policy();
+        int move = randomPolicy();
         curPhase.play(move, player);
         player = 3 - player;
     }
