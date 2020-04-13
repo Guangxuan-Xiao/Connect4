@@ -183,6 +183,9 @@ int MCTree::finalDecision() {
             move = i;
         }
     }
+#ifdef OUTPUT
+    cerr << "Confidence: " << maxScore << endl;
+#endif
     return move;
 }
 

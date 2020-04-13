@@ -50,10 +50,6 @@ class Phase {
             user[col] |= (1 << (M - top[col]));
         else if (player == 2)
             machine[col] |= (1 << (M - top[col]));
-        else {
-            cout << "Invalid Player " << player << endl;
-            exit(1);
-        }
         top[col] -= 1;
         if (noY == col && top[col] == noX + 1) top[col] -= 1;
         moves = moves + 1;
@@ -128,12 +124,11 @@ class Phase {
     }
 
     int moveScore(int col, char player) const {
-        int mid = (N >> 1);
-        int score = 1;
+        int mid = (N >> 1), score = 1;
         score += align3(col, player);
-        if (score > 100000) return score;
+        if (score > 1000) return score;
         score += align3(col, 3 - player);
-        if (score > 100000) return score;
+        if (score > 1000) return score;
         score += (col < mid) ? col / 3 : (N - 1 - col) / 3;
         return score;
     }
@@ -228,7 +223,7 @@ class Phase {
         for (int i = left; i < col - 1; ++i)
             if (m[i] & (1 << (M - top[col] - col + i))) ++score;
         for (int i = col + 1; i < right; ++i)
-            if (m[i] & (1 << (M - top[col] - col + 1))) ++score;
+            if (m[i] & (1 << (M - top[col] - col + i))) ++score;
 
         // Diagnal 2: Upper-left to bottom-right
         for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
@@ -237,7 +232,7 @@ class Phase {
         for (int i = left; i < col - 1; ++i)
             if (m[i] & (1 << (M - top[col] + col - i))) ++score;
         for (int i = col + 1; i < right; ++i)
-            if (m[i] & (1 << (M - top[col] + col - 1))) ++score;
+            if (m[i] & (1 << (M - top[col] + col - i))) ++score;
 
         return score;
     }
