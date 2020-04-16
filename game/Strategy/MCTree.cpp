@@ -125,7 +125,7 @@ int MCTree::centerSample(int moveNum) {
 }
 
 int MCTree::scoreSample(int moveNum, int player) {
-    int totalScore = 0, mid = (moveNum >> 1);
+    int totalScore = 0;
     for (int i = 0; i < moveNum; ++i) {
         score[i] = curPhase.moveScore(nextMove[i], player);
         totalScore += score[i];
@@ -176,7 +176,7 @@ int MCTree::finalDecision() {
         if (child == -1) continue;
         float score = nodes[child].score();
 #ifdef OUTPUT
-        cerr << "Move: " << i << " Score: " << score
+        cout << "Move: " << i << " Score: " << score
              << " Cnt: " << nodes[child].cnt << " Value: " << nodes[child].value
              << endl;
 #endif
@@ -186,7 +186,7 @@ int MCTree::finalDecision() {
         }
     }
 #ifdef OUTPUT
-    cerr << "Confidence: " << maxScore << endl;
+    cout << "Confidence: " << maxScore << endl;
 #endif
     return move;
 }

@@ -1,70 +1,96 @@
-Round 0 seed: 1586277706 :
-M = 9, N = 10
+Round 0 seed: 1587020485 :
+M = 9, N = 12
 A first:
-. . . B . A A . . . 
-. . . A . B A . A . 
-B . B A . B B . B . 
-A . A B . A B B A A 
-B . B A . A A B B B 
-B . A B . B B X A A 
-A . B A . A B A B B 
-B B A B B A A A B A 
-A B A B A B A B A A 
-B - won
-B first:
-. . . A . . . . . . 
-. A A A B . . . . . 
-. B B B A . A . . . 
-B B B B A . B . . . 
-B A A A B . A A . . 
-A B B B A . B X . . 
-B A A B B . A A A . 
-B B B A A . A A B . 
-B B B A B . B A A . 
-B - won
-
-Round 1 seed: 1586278020 :
-M = 11, N = 12
-A first:
-. . B . A . A B . A . A 
-. . A . A . B B . B . B 
-. . A . A . A A . A . A 
-. . B . B . B B . B . B 
-X . A . B . B A . A . A 
-. . B . A . A B . B . B 
-. . A . B . B A B B . A 
-. . B A A A A B A A . B 
-A . A B B B A B B B . B 
-B B B A A A B A B A . A 
-A A A B A A B A B A B B 
-A - won
-B first:
+Move: 0 Score: -0.0463215 Cnt: 367 Value: -17
+Move: 1 Score: 0.0103896 Cnt: 770 Value: 8
+Move: 2 Score: -0.183333 Cnt: 120 Value: -22
+Move: 3 Score: 0.106705 Cnt: 16391 Value: 1749
+Move: 4 Score: -0.0150376 Cnt: 532 Value: -8
+Move: 5 Score: -0.414634 Cnt: 41 Value: -17
+Move: 6 Score: 0.0918276 Cnt: 6730 Value: 618
+Move: 7 Score: 0.117184 Cnt: 44460 Value: 5210
+Move: 8 Score: 0.111179 Cnt: 22945 Value: 2551
+Move: 9 Score: 0.0976335 Cnt: 9085 Value: 887
+Move: 10 Score: 0.0381917 Cnt: 1283 Value: 49
+Move: 11 Score: -0.0298851 Cnt: 435 Value: -13
+Confidence: 0.117184
+My move: 7
+B Move:
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
 . . . . . . . . . . . . 
-X . . . . . . . . . . . 
-. . . . A . . . B . . . 
-. . . . B . . . A . . . 
-. . . A A A A B B . . . 
-. . . B A A B A B . . . 
-. . . A B A B A B A . . 
-. . . B A A B B A B B B 
-A - won
-
-Round 2 seed: 1586278334 :
-M = 11, N = 9
-A first:
-A . A A . . B . . 
-A A B A . B X . . 
-A A A B . A B B B 
-B B B A . B B A A 
-A A A B . A A B B 
-B B B A . B B A A 
-A A A B . A B B B 
-B B B A . B A A A 
-A A A B . A B B B 
-B B B A . B A A A 
-A A B A . B A B B 
-A - won
-B first:
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . X . . . A B . . . 
+A Move:
+Move: 0 Score: -0.203883 Cnt: 103 Value: -21
+Move: 1 Score: -0.0288248 Cnt: 451 Value: -13
+Move: 2 Score: 0.0181818 Cnt: 935 Value: 17
+Move: 3 Score: 0.0793774 Cnt: 5140 Value: 408
+Move: 4 Score: 0.0713128 Cnt: 3702 Value: 264
+Move: 5 Score: 0.082046 Cnt: 5826 Value: 478
+Move: 6 Score: 0.0734127 Cnt: 4032 Value: 296
+Move: 7 Score: 0.0923703 Cnt: 10079 Value: 931
+Move: 8 Score: 0.169892 Cnt: 104543 Value: 17761
+Move: 9 Score: 0.00140252 Cnt: 713 Value: 1
+Move: 10 Score: -0.0166976 Cnt: 539 Value: -9
+Move: 11 Score: -0.0194553 Cnt: 514 Value: -10
+Confidence: 0.169892
+My move: 8
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . A . . . 
+. . . X . . . A B . . . 
+B Move:
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . B A . . . 
+. . . X . . . A B . . . 
+A Move:
+Move: 0 Score: -0.0769231 Cnt: 117 Value: -9
+Move: 1 Score: -0.0482759 Cnt: 145 Value: -7
+Move: 2 Score: -0.0892857 Cnt: 112 Value: -10
+Move: 3 Score: 0.00884956 Cnt: 226 Value: 2
+Move: 4 Score: 0.105666 Cnt: 653 Value: 69
+Move: 5 Score: 0.0669975 Cnt: 403 Value: 27
+Move: 6 Score: 0.0972222 Cnt: 576 Value: 56
+Move: 7 Score: 0.243833 Cnt: 142282 Value: 34693
+Move: 8 Score: 0.105023 Cnt: 657 Value: 69
+Move: 9 Score: 0.00884956 Cnt: 226 Value: 2
+Move: 10 Score: -0.115789 Cnt: 95 Value: -11
+Move: 11 Score: -0.0384615 Cnt: 156 Value: -6
+Confidence: 0.243833
+My move: 7
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . A . . . . 
+. . . . . . . B A . . . 
+. . . X . . . A B . . . 
+B Move:
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . . . . . . 
+. . . . . . . A . . . . 
+. . . . . . . B A . . . 
+. . . X . B . A B . . . 
+A Move:
