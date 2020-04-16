@@ -25,10 +25,11 @@ bool Node::isLeaf() {
 
 void MCTree::backUp(int node, int value) {
     while (node != -1) {
+        char x = nodes[node].x, y = nodes[node].y;
         ++nodes[node].cnt;
-        ++moveCnt[nodes[node].x][nodes[node].y];
+        ++moveCnt[x][y];
         nodes[node].value += value;
-        moveValue[nodes[node].x][nodes[node].y] += value;
+        moveValue[x][y] += value;
         value = -value;
         node = nodes[node].parent;
     }
@@ -50,8 +51,7 @@ int MCTree::bestMove(int node) {
         if (nodes[child].cnt == 0) return i;
         // float score =
         //     nodes[child].score() + UCB_C * sqrtf(log_N / (nodes[child].cnt));
-        float score = (1 - beta) * nodes[child].score() +
-                      beta * moveScore(node) +
+        float score = (1 - beta) * nodes[child].score() + beta * moveScore(i) +
                       UCB_C * sqrtf(log_N / (nodes[child].cnt));
         if (score > maxScore) {
             maxScore = score;
@@ -232,10 +232,13 @@ int MCTree::rollout(int node) {
 int MCTree::finalDecision() {
     int move = -1;
     float maxScore = INT_MIN;
+    float beta = sqrtf(K / (3 * nodes[root].cnt + K));
+    float log_N = logf(nodes[root].cnt + 0.001);
     for (int i = 0; i < initPhase.N; ++i) {
         int child = nodes[root].child[i];
         if (child == -1) continue;
-        float score = nodes[child].score();
+        float score = (1 - beta) * nodes[child].score() + beta * moveScore(i) +
+                      UCB_C * sqrtf(log_N / (nodes[child].cnt));
 #ifdef OUTPUT
         cout << "Move: " << i << " Score: " << score
              << " Cnt: " << nodes[child].cnt << " Value: " << nodes[child].value
