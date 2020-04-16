@@ -1,0 +1,39 @@
+Round 0 seed: 1587050983 :
+M = 12, N = 9
+A first:
+Move: 0 Score: 0.0349014 Cnt: 659 Value: 23
+Move: 1 Score: 0.0254669 Cnt: 589 Value: 15
+Move: 2 Score: 0.0652985 Cnt: 1072 Value: 70
+Move: 3 Score: 0.172337 Cnt: 160534 Value: 27666
+Move: 4 Score: 0.0589452 Cnt: 967 Value: 57
+Move: 5 Score: 0.0623145 Cnt: 1011 Value: 63
+Move: 6 Score: 0.0437086 Cnt: 755 Value: 33
+Move: 7 Score: -0.020649 Cnt: 339 Value: -7
+Move: 8 Score: -0.00492611 Cnt: 406 Value: -2
+Confidence: 0.172337
+My move: 3
+B Move:
+Move: 0 Score: -0.3246 Cnt: 687 Value: -223
+Move: 1 Score: -0.245938 Cnt: 4493 Value: -1105
+Move: 2 Score: -0.176937 Cnt: 106535 Value: -18850
+Move: 3 Score: -0.332253 Cnt: 617 Value: -205
+Move: 4 Score: -0.274931 Cnt: 1815 Value: -499
+Move: 5 Score: -0.208577 Cnt: 65103 Value: -13579
+Move: 6 Score: -0.252411 Cnt: 3526 Value: -890
+Move: 7 Score: -0.381818 Cnt: 330 Value: -126
+Move: 8 Score: -0.351812 Cnt: 469 Value: -165
+Confidence: -0.176937
+My move: 2
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . X . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . . . . . . . . 
+. . B A . . . . . 
+A Move:

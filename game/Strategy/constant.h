@@ -9,5 +9,6 @@ const int TIME_LIMIT = 2900000;
 const int MAX_N = 12;
 const int MAX_M = 12;
 const float UCB_C = 1.0;
+const float K = 1000;
 const int SEED = 42;
 #endif

@@ -14,25 +14,45 @@ bool Node::isLeaf() {
     return true;
 }
 
-void MCTree::backUp(int node, float value) {
+// void MCTree::backUp(int node, int value) {
+//     while (node != -1) {
+//         ++nodes[node].cnt;
+//         nodes[node].value += value;
+//         value = -value;
+//         node = nodes[node].parent;
+//     }
+// }
+
+void MCTree::backUp(int node, int value) {
     while (node != -1) {
         ++nodes[node].cnt;
+        ++moveCnt[nodes[node].x][nodes[node].y];
         nodes[node].value += value;
+        moveValue[nodes[node].x][nodes[node].y] += value;
         value = -value;
         node = nodes[node].parent;
     }
+}
+
+float MCTree::moveScore(int node) {
+    char x = nodes[node].x, y = nodes[node].y;
+    return (float)moveValue[x][y] / moveCnt[x][y];
 }
 
 int MCTree::bestMove(int node) {
     int ret = -1;
     float maxScore = -INFINITY;
     float log_N = logf(nodes[node].cnt + 0.001);
+    float beta = sqrtf(K / (3 * nodes[node].cnt + K));
     for (int i = 0; i < initPhase.N; ++i) {
         int child = nodes[node].child[i];
         if (child == -1) continue;
         if (nodes[child].cnt == 0) return i;
-        float score =
-            nodes[child].score() + UCB_C * sqrtf(log_N / (nodes[child].cnt));
+        // float score =
+        //     nodes[child].score() + UCB_C * sqrtf(log_N / (nodes[child].cnt));
+        float score = (1 - beta) * nodes[child].score() +
+                      beta * moveScore(node) +
+                      UCB_C * sqrtf(log_N / (nodes[child].cnt));
         if (score > maxScore) {
             maxScore = score;
             ret = i;
@@ -43,6 +63,12 @@ int MCTree::bestMove(int node) {
 
 int NodePool::newNode(char player, int parent) {
     pool[size].reset(player, parent);
+    return size++;
+}
+
+int NodePool::newNode(char player, int parent, char x, char y) {
+    pool[size].reset(player, parent);
+    pool[size].setPoint(x, y);
     return size++;
 }
 
@@ -58,6 +84,8 @@ void MCTree::moveRoot(int move) {
 void MCTree::setPhase(const Phase& phase, int move) {
     initPhase = phase;
     curPhase = phase;
+    memset(moveValue, 0, sizeof(moveValue));
+    memset(moveCnt, 0, sizeof(moveCnt));
     if (lastMove == -1 || (NODEPOOL_SIZE - nodes.size) <= 2e6) {
         nodes.size = 0;
         root = nodes.newNode(2, -1);
@@ -65,6 +93,7 @@ void MCTree::setPhase(const Phase& phase, int move) {
         moveRoot(lastMove);
         moveRoot(move);
     }
+    nodes[root].setPoint(curPhase.getX(move), move);
     if (nodes[root].isLeaf()) expand(root);
 }
 
@@ -81,31 +110,63 @@ int MCTree::select() {
     return node;
 }
 
+// int MCTree::expand(int node) {
+//     int player = nodes[node].player;
+//     if (curPhase.terminal() || curPhase.winner()) return node;
+//     int urgent = -1;
+//     for (int i = 0; i < initPhase.N; ++i) {
+//         if (curPhase.canPlay(i)) {
+//             if (curPhase.isWinningMove(i, player)) {
+//                 nodes[node].child[i] = nodes.newNode(3 - player, node);
+//                 for (int j = 0; j < i; ++j) nodes[node].child[j] = -1;
+//                 return nodes[node].child[i];
+//             }
+//             if (!curPhase.isLosingMove(i, player))
+//                 nodes[node].child[i] = nodes.newNode(3 - player, node);
+//             if (curPhase.isWinningMove(i, 3 - player)) urgent = i;
+//         }
+//     }
+//     if (urgent != -1) {
+//         for (int i = 0; i < urgent; ++i) nodes[node].child[i] = -1;
+//         return nodes[node].child[urgent] = nodes.newNode(3 - player, node);
+//     }
+//     for (int i = 0; i < initPhase.N; ++i)
+//         if (nodes[node].child[i] != -1) return nodes[node].child[i];
+//     for (int i = 0; i < initPhase.N; ++i)
+//         if (curPhase.canPlay(i))
+//             return nodes[node].child[i] = nodes.newNode(3 - player, node);
+// }
+
 int MCTree::expand(int node) {
     int player = nodes[node].player;
     if (curPhase.terminal() || curPhase.winner()) return node;
     int urgent = -1;
     for (int i = 0; i < initPhase.N; ++i) {
+        char x = curPhase.getX(i);
         if (curPhase.canPlay(i)) {
             if (curPhase.isWinningMove(i, player)) {
-                nodes[node].child[i] = nodes.newNode(3 - player, node);
+                nodes[node].child[i] = nodes.newNode(3 - player, node, x, i);
                 for (int j = 0; j < i; ++j) nodes[node].child[j] = -1;
                 return nodes[node].child[i];
             }
             if (!curPhase.isLosingMove(i, player))
-                nodes[node].child[i] = nodes.newNode(3 - player, node);
+                nodes[node].child[i] = nodes.newNode(3 - player, node, x, i);
             if (curPhase.isWinningMove(i, 3 - player)) urgent = i;
         }
     }
     if (urgent != -1) {
         for (int i = 0; i < urgent; ++i) nodes[node].child[i] = -1;
-        return nodes[node].child[urgent] = nodes.newNode(3 - player, node);
+        char x = curPhase.getX(urgent);
+        return nodes[node].child[urgent] =
+                   nodes.newNode(3 - player, node, x, urgent);
     }
     for (int i = 0; i < initPhase.N; ++i)
         if (nodes[node].child[i] != -1) return nodes[node].child[i];
     for (int i = 0; i < initPhase.N; ++i)
-        if (curPhase.canPlay(i))
-            return nodes[node].child[i] = nodes.newNode(3 - player, node);
+        if (curPhase.canPlay(i)) {
+            char x = curPhase.getX(i);
+            return nodes[node].child[i] = nodes.newNode(3 - player, node, x, i);
+        }
 }
 
 int MCTree::centerSample(int moveNum) {
@@ -154,7 +215,7 @@ int MCTree::smartPolicy(int player) {
     return nextMove[scoreSample(moveNum, player)];
 }
 
-float MCTree::rollout(int node) {
+int MCTree::rollout(int node) {
     int player = nodes[node].player;
     int sgn = ((player == 2) ? 1 : -1);
     while (!curPhase.terminal()) {
@@ -193,7 +254,7 @@ int MCTree::finalDecision() {
 
 int MCTree::search(int timeLimit) {
     time_t start = clock();
-    for (int times = 0; true; ++times) {
+    while (true) {
         int usedTime = clock() - start;
         if (usedTime >= timeLimit) break;
         int cur = select();
