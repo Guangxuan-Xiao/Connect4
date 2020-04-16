@@ -134,6 +134,8 @@ class Phase {
         return score;
     }
 
+    inline char getX(char y) const { return top[y] - 1; }
+
     float score() const { return 1 - (float)moves / (M * N); }
 
     unsigned char top[MAX_N];

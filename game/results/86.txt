@@ -1,0 +1,27 @@
+0:
+1	33	0
+1	51	1
+
+1:
+1	69	0
+1	52	0
+
+2:
+1	30	0
+1	57	11
+
+3:
+1	36	0
+1	114	1
+
+4:
+1	36	0
+1	27	0
+
+Stat:
+ratio of A wins : 1
+ratio of B wins : 0
+ratio of Tie : 0
+
+ratio of (A wins + tie) : 1
+ratio of (B wins + tie) : 0

@@ -13,7 +13,8 @@ int Phase::noX = 12;
 int Phase::noY = 12;
 typedef pair<int, int> pii;
 MCTree* mcTree = nullptr;
-// int negamax(const Phase &phase, int alpha, int beta, int player, int &move);
+// int negamax(const Phase &phase, int alpha, int 
+, int player, int &move);
 /*
 		策略函数接口,该函数被对抗平台调用,每次传入当前状态,要求输出你的落子点,该落子点必须是一个符合游戏规则的落子点,不然对抗平台会直接认为你的程序有误
 
