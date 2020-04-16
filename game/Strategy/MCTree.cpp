@@ -114,6 +114,7 @@ int MCTree::centerSample(int moveNum) {
         score[i] = i < mid ? i / 2 + 1 : (moveNum - 1 - i) / 2 + 1;
         totalScore += score[i];
     }
+    if (totalScore == 0) return 0;
     int randNum = rand() % totalScore;
     int move = -1;
     do {
@@ -129,6 +130,7 @@ int MCTree::scoreSample(int moveNum, int player) {
         score[i] = curPhase.moveScore(nextMove[i], player);
         totalScore += score[i];
     }
+    if (totalScore == 0) return 0;
     int randNum = rand() % totalScore;
     int move = -1;
     do {

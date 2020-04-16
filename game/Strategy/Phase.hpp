@@ -130,6 +130,7 @@ class Phase {
         score += align3(col, 3 - player);
         if (score > 1000) return score;
         score += (col < mid) ? col / 3 : (N - 1 - col) / 3;
+        // if (isLosingMove(col, player)) return 0;
         return score;
     }
 
@@ -205,33 +206,33 @@ class Phase {
         int right = (col + 3) < N ? col + 3 : N - 1;
         for (int i = left; i < right; ++i) m[i] = pos[i] & pos[i + 1];
         for (int i = left; i < right - 2; ++i)
-            if (m[i] & m[i + 2]) return 100000;
-        for (int i = left; i < col - 1; ++i)
+            if (m[i] & m[i + 2]) return 1000000;
+        for (int i = left + 1; i < col - 1; ++i)
             if (m[i] & (1 << (M - top[col]))) ++score;
-        for (int i = col + 1; i < right; ++i)
+        for (int i = col + 1; i < right - 1; ++i)
             if (m[i] & (1 << (M - top[col]))) ++score;
 
         // Vertical
         m[col] = pos[col] & (pos[col] >> 1);
-        if (m[col] & (m[col] >> 2)) return 100000;
+        if (m[col] & (m[col] >> 2)) return 1000000;
         if ((m[col] >> (M - top[col] - 2)) & 1) score++;
 
         // Diagnal 1: Bottom-left to upper-right
         for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] >> 1);
         for (int i = left; i < right - 2; ++i)
-            if (m[i] & (m[i + 2] >> 2)) return 100000;
-        for (int i = left; i < col - 1; ++i)
+            if (m[i] & (m[i + 2] >> 2)) return 1000000;
+        for (int i = left + 1; i < col - 1; ++i)
             if (m[i] & (1 << (M - top[col] - col + i))) ++score;
-        for (int i = col + 1; i < right; ++i)
+        for (int i = col + 1; i < right - 1; ++i)
             if (m[i] & (1 << (M - top[col] - col + i))) ++score;
 
         // Diagnal 2: Upper-left to bottom-right
         for (int i = left; i < right; ++i) m[i] = pos[i] & (pos[i + 1] << 1);
         for (int i = left; i < right - 2; ++i)
-            if (m[i] & (m[i + 2] << 2)) return 100000;
-        for (int i = left; i < col - 1; ++i)
+            if (m[i] & (m[i + 2] << 2)) return 1000000;
+        for (int i = left + 1; i < col - 1; ++i)
             if (m[i] & (1 << (M - top[col] + col - i))) ++score;
-        for (int i = col + 1; i < right; ++i)
+        for (int i = col + 1; i < right - 1; ++i)
             if (m[i] & (1 << (M - top[col] + col - i))) ++score;
 
         return score;
